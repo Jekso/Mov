@@ -75,6 +75,24 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "routes/api.php",
+			"settings":
+			{
+				"buffer_size": 982,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/Group/GroupController.php",
+			"settings":
+			{
+				"buffer_size": 435,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -83,7 +101,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 354.0,
+		"height": 231.0,
 		"last_filter": "Package Control: ",
 		"selected_items":
 		[
@@ -96,7 +114,7 @@
 				"Snippet: html"
 			]
 		],
-		"width": 414.0
+		"width": 464.0
 	},
 	"console":
 	{
@@ -117,13 +135,95 @@
 	},
 	"expanded_folders":
 	[
-		"/C/xampp/htdocs/mov"
+		"/C/xampp/htdocs/mov",
+		"/C/xampp/htdocs/mov/app",
+		"/C/xampp/htdocs/mov/app/Http",
+		"/C/xampp/htdocs/mov/app/Http/Controllers",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Group",
+		"/C/xampp/htdocs/mov/routes"
 	],
 	"file_history":
 	[
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/QuestionController.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/AssignmentController.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/DataController.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/LoungeController.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Auth/AuthController.php",
 		"/C/xampp/htdocs/mov/app/Http/Controllers/Controller.php",
-		"/C/xampp/htdocs/mov/.env",
+		"/C/Users/Eslam Jekso/AppData/Roaming/Sublime Text 3/Packages/User/fn.sublime-snippet",
+		"/C/xampp/htdocs/mov/app/Group.php",
+		"/C/xampp/htdocs/mov/app/Answer.php",
+		"/C/xampp/htdocs/mov/app/AnswerImage.php",
+		"/C/xampp/htdocs/mov/app/AnswerComment.php",
+		"/C/xampp/htdocs/mov/app/Question.php",
+		"/C/xampp/htdocs/mov/app/QuestionComment.php",
+		"/C/xampp/htdocs/mov/app/QuestionImage.php",
+		"/C/xampp/htdocs/mov/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
+		"/C/xampp/htdocs/mov/app/Data.php",
+		"/C/xampp/htdocs/mov/app/Assignment.php",
+		"/C/xampp/htdocs/mov/app/DataVoiceContent.php",
+		"/C/xampp/htdocs/mov/app/DataImageContent.php",
+		"/C/xampp/htdocs/mov/app/DataImage.php",
+		"/C/xampp/htdocs/mov/app/DataVoice.php",
+		"/C/xampp/htdocs/mov/app/DataLink.php",
+		"/C/xampp/htdocs/mov/app/Lounge.php",
+		"/C/xampp/htdocs/mov/app/InterestTag.php",
+		"/C/xampp/htdocs/mov/app/LoungePollOption.php",
+		"/C/xampp/htdocs/mov/app/LoungeImage.php",
+		"/C/xampp/htdocs/mov/app/User.php",
+		"/C/xampp/htdocs/mov/app/GroupAdditionalInfo.php",
+		"/C/xampp/htdocs/mov/app/UserRole.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/GroupController.php",
+		"/C/Users/Eslam Jekso/AppData/Roaming/Sublime Text 3/Packages/User/PHP Companion.sublime-settings",
 		"/C/Users/Eslam Jekso/AppData/Roaming/Sublime Text 3/Packages/PHP Companion/PHP Companion.sublime-settings",
+		"/C/Users/Eslam Jekso/AppData/Roaming/Sublime Text 3/Packages/User/btm.sublime-snippet",
+		"/C/Users/Eslam Jekso/AppData/Roaming/Sublime Text 3/Packages/User/bt.sublime-snippet",
+		"/C/Users/Eslam Jekso/AppData/Roaming/Sublime Text 3/Packages/User/hm.sublime-snippet",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_146138_create_poll_option_user_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_199845_create_question_user_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_165651_create_data_user_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_199722_create_answer_comments_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_196145_create_question_comments_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_197452_create_answers_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_198747_create_answer_images_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_195922_create_question_images_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_190100_create_questions_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_170000_create_assignments_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_165507_create_data_voice_contents_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_165506_create_data_image_contents_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_165504_create_data_voices_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_135566_create_group_user_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_155718_create_datas_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_165345_create_data_links_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_165438_create_data_images_table.php",
+		"/C/xampp/htdocs/mov/app/Providers/AppServiceProvider.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_135543_create_group_additional_infos_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_135545_create_group_interest_tag_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_111111_create_interest_tag_user_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_146138_create_users_poll_options_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_154700_create_lounge_poll_options_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_154627_create_lounge_images_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_135638_create_lounges_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_154700_create_group_lounge_poll_options_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_154627_create_group_lounge_images_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_135638_create_group_lounges_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_135566_create_users_groups_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_135543_create_group_additional_info_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_135501_create_group_interest_tags_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_135401_create_groups_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_111111_create_user_interest_tags_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_100000_create_interest_tags_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_000000_create_users_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_09_25_143958_create_interest_tags_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_143958_create_interest_tags_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_143707_create_user_roles_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_142431_create_user_roles_table.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/GroupQuestionController.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/GroupLoungeController.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/GroupDataController.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/GroupAssignmentController.php",
+		"/C/xampp/htdocs/mov/.env",
 		"/C/xampp/htdocs/location/app/Http/Controllers/AppController.php",
 		"/C/xampp/htdocs/nunu/source/editor/ui/DropdownMenu.js",
 		"/C/Users/Eslam Jekso/Desktop/nunu.min.js",
@@ -171,88 +271,11 @@
 		"/C/xampp/htdocs/moove/.env",
 		"/C/xampp/htdocs/fuckinDBProject/resources/views/group_posts.blade.php",
 		"/C/xampp/htdocs/fuckinDBProject/app/User.php",
-		"/C/xampp/htdocs/fuckinDBProject/resources/views/groups.blade.php",
-		"/C/xampp/htdocs/fuckinDBProject/app/Http/Controllers/AppController.php",
-		"/C/xampp/htdocs/news/app/Editor.php",
-		"/C/Users/Eslam Jekso/Desktop/home/groups.html",
-		"/C/Users/Eslam Jekso/Desktop/Group-Posts/Group Posts/assets/group_posts.html",
-		"/C/xampp/htdocs/el3l2/index.php",
-		"/C/Users/Eslam Jekso/Desktop/assets/Login-page.html",
-		"/C/Users/Eslam Jekso/Desktop/New folder - Copy/.ftpquota",
-		"/C/Users/Eslam Jekso/Desktop/New folder - Copy/.ftpconfig",
-		"/C/xampp/htdocs/move/.env",
-		"/C/xampp/htdocs/news/app/User.php",
-		"/C/xampp/htdocs/news/app/Http/Controllers/AdminController.php",
-		"/C/xampp/htdocs/news/database/factories/ModelFactory.php",
-		"/C/xampp/htdocs/news/database/seeds/UsersTableSeeder.php",
-		"/C/xampp/htdocs/news/public/.htaccess",
-		"/C/Users/Eslam Jekso/Desktop/agriculture2day/template UI - Copy/category.html",
-		"/C/Users/Eslam Jekso/Desktop/ddd.txt",
-		"/C/Users/Eslam Jekso/Desktop/agriculture2day/template UI - Copy/article.html",
-		"/C/Users/Eslam Jekso/Desktop/agriculture2day/template UI - Copy/Home.html",
-		"/C/Users/Eslam Jekso/Downloads/Article Page/css/style.css",
-		"/C/Users/Eslam Jekso/Desktop/agriculture2day/template UI/Home.html",
-		"/C/Users/Eslam Jekso/Desktop/agriculture2day/template UI/main_layout.html",
-		"/C/Users/Eslam Jekso/Downloads/Article Page/Article Page.html",
-		"/C/Users/Eslam Jekso/Desktop/Home-Final/css/style.css",
-		"/C/Users/Eslam Jekso/Desktop/Home-Final/Home - Copy.html",
-		"/C/xampp/htdocs/news/public/front/css/font-awesome.min.css",
-		"/C/xampp/htdocs/news/resources/views/front/layouts/main_layout.blade.php",
-		"/C/xampp/htdocs/news/resources/views/front/home.blade.php",
-		"/C/Users/Eslam Jekso/Desktop/Home-Final/Home.html",
-		"/C/Users/Eslam Jekso/Desktop/imgrec/main.py",
-		"/C/xampp/htdocs/news/resources/views/admin/dashboard.blade.php",
-		"/C/xampp/htdocs/news/resources/views/admin/login.blade.php",
-		"/C/Python27/Lib/site-packages/cv2/opencv_ffmpeg320.dll",
-		"/C/Python27/Lib/site-packages/cv2/__init__.py",
-		"/C/Python27/Lib/site-packages/cv2/__init__.pyc",
-		"/C/xampp/htdocs/news/resources/views/admin/editors/addeditor.blade.php",
-		"/C/xampp/htdocs/news/resources/views/admin/editors/alleditors.blade.php",
-		"/C/xampp/htdocs/news/resources/views/admin/layouts/main_layout.blade.php",
-		"/C/xampp/htdocs/news/resources/views/admin/authors/addauthor.blade.php",
-		"/C/xampp/htdocs/news/resources/views/admin/authors/allauthors.blade.php",
-		"/C/xampp/htdocs/news/resources/views/admin/news/addnew.blade.php",
-		"/C/xampp/htdocs/news/resources/views/admin/news/allnews.blade.php",
-		"/C/xampp/htdocs/news/public/css/styles.css",
-		"/C/xampp/htdocs/news/app/Http/routes.php",
-		"/C/xampp/htdocs/news/app/TheNew.php",
-		"/C/xampp/htdocs/news/app/Http/Middleware/OwnTheNew.php",
-		"/C/xampp/htdocs/news/resources/views/admin/news/editnew.blade.php",
-		"/C/xampp/htdocs/news/app/Http/Kernel.php",
-		"/C/xampp/htdocs/news/app/Http/Middleware/IsAdmin.php",
-		"/C/xampp/htdocs/news/app/Console/Kernel.php",
-		"/C/xampp/htdocs/news/app/NewImg.php",
-		"/C/Users/Eslam Jekso/Downloads/categories.sql",
-		"/C/xampp/htdocs/news/database/migrations/2017_04_21_191135_create_editors_table.php",
-		"/C/xampp/htdocs/news/database/migrations/2017_04_21_191150_create_news_table.php",
-		"/C/xampp/htdocs/news/app/Http/Middleware/Authenticate.php",
-		"/C/xampp/htdocs/news/app/Http/Middleware/RedirectIfAuthenticated.php",
-		"/C/Users/Eslam Jekso/AppData/Roaming/Sublime Text 3/Packages/User/newfunc.sublime-snippet",
-		"/C/xampp/htdocs/news/database/seeds/NewsTableSeeder.php",
-		"/C/xampp/htdocs/news/app/Category.php",
-		"/C/xampp/htdocs/news/database/seeds/EditorsTableSeeder.php",
-		"/C/xampp/htdocs/news/database/seeds/DatabaseSeeder.php",
-		"/C/xampp/htdocs/news/app/New.php",
-		"/C/xampp/htdocs/news/database/migrations/2017_04_21_191216_create_new_images_table.php",
-		"/C/xampp/htdocs/news/database/migrations/2017_04_21_191120_create_categories_table.php",
-		"/C/xampp/htdocs/news/database/migrations/2014_10_12_000000_create_users_table.php",
-		"/C/xampp/htdocs/news/.env",
-		"/C/xampp/htdocs/throttleCTF/resources/views/auth/login.blade.php",
-		"/C/xampp/htdocs/firewall/vendor/shieldfy/shieldfy-php-client/src/Guard.php",
-		"/C/xampp/htdocs/firewall/vendor/autoload.php",
-		"/C/xampp/htdocs/firewall/code.php",
-		"/C/xampp/htdocs/firewall/squnity/payloads/LFI.php",
-		"/C/xampp/htdocs/firewall/squnity/main.php",
-		"/C/xampp/htdocs/firewall/squnity/read.php",
-		"/C/xampp/htdocs/firewall/squnity/payloads/LFI/lfi_payloads.txt",
-		"/C/xampp/htdocs/firewall/squnity/test.txt",
-		"/C/xampp/htdocs/firewall/squnity/lfi.json",
-		"/C/xampp/htdocs/firewall/squnity/payloads/simple.txt",
-		"/C/xampp/htdocs/firewall/about.txt"
+		"/C/xampp/htdocs/fuckinDBProject/resources/views/groups.blade.php"
 	],
 	"find":
 	{
-		"height": 32.0
+		"height": 31.0
 	},
 	"find_in_files":
 	{
@@ -266,6 +289,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"GroupAssignment",
+			"GroupData",
+			"GroupLounge",
+			"GroupQuestion",
 			"SSL Virtual Host Context",
 			"../assets/",
 			"::",
@@ -282,6 +309,10 @@
 		"regex": false,
 		"replace_history":
 		[
+			"Assignment",
+			"Data",
+			"Lounge",
+			"Question",
 			""
 		],
 		"reverse": false,
@@ -293,14 +324,73 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "routes/api.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 982,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								483,
+								483
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 159.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/Http/Controllers/Group/GroupController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 435,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								200,
+								200
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 111.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 32.0
+		"height": 31.0
 	},
 	"input":
 	{
@@ -337,7 +427,7 @@
 	"project": "mov_project.sublime-project",
 	"replace":
 	{
-		"height": 60.0
+		"height": 114.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -346,6 +436,18 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"use",
+				"app\\User.php"
+			],
+			[
+				"app",
+				"app\\Providers\\AppServiceProvider.php"
+			],
+			[
+				"appse",
+				"app\\Providers\\AppServiceProvider.php"
+			],
 			[
 				"group",
 				"resources\\views\\group_posts.blade.php"
@@ -495,7 +597,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 244.0,
+	"side_bar_width": 249.0,
 	"status_bar_visible": false,
 	"template_settings":
 	{
