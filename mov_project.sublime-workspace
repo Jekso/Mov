@@ -1,0 +1,503 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"req",
+				"request"
+			],
+			[
+				"you",
+				"youtube_link"
+			],
+			[
+				"the",
+				"the_new"
+			],
+			[
+				"editor",
+				"editor_id"
+			],
+			[
+				"co",
+				"compact"
+			],
+			[
+				"u",
+				"ul\tTag"
+			],
+			[
+				"for",
+				"form\tTag"
+			],
+			[
+				"getEd",
+				"getEditNew"
+			],
+			[
+				"getLo",
+				"getLogout"
+			],
+			[
+				"f",
+				"f\tnewfunc"
+			],
+			[
+				"exp",
+				"explode"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"border-r",
+				"border-radius"
+			],
+			[
+				"c",
+				"class\tAttr"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"di",
+				"div\tTag"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 354.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"htl",
+				"Snippet: html"
+			]
+		],
+		"width": 414.0
+	},
+	"console":
+	{
+		"height": 218.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/xampp/htdocs/mov"
+	],
+	"file_history":
+	[
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Controller.php",
+		"/C/xampp/htdocs/mov/.env",
+		"/C/Users/Eslam Jekso/AppData/Roaming/Sublime Text 3/Packages/PHP Companion/PHP Companion.sublime-settings",
+		"/C/xampp/htdocs/location/app/Http/Controllers/AppController.php",
+		"/C/xampp/htdocs/nunu/source/editor/ui/DropdownMenu.js",
+		"/C/Users/Eslam Jekso/Desktop/nunu.min.js",
+		"/C/xampp/htdocs/file/nunu.min.js",
+		"/F/courses/ML/Udemy_ML_A-Z_Python_and_R/22 Hierarchical Clustering/attached_files/120 HC in Python - Step 1/hc.py",
+		"/C/xampp/htdocs/file/index.html",
+		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/07 Clustering/solved_problems/01 Universities problem using KMeans Clustering/K Means Clustering Project .ipynb",
+		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/06 Classification/basic_snippet_code/DecisionTreeClassifier.py",
+		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/05 Regression/basic_snippet_code/02 Multiple Linear Regression/multi_linear_regression.py",
+		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/08 Association Rule Learning/Apriori Algorithm/apyori.py",
+		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/07 Clustering/basic_snippet_code/KMeans/Mall_Customers.csv",
+		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/07 Clustering/basic_snippet_code/KMeansAlgorithm.py",
+		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/04 Data preprocessing & visualization/preprocessing/4-categorial_data (get_dummies).py",
+		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/04 Data preprocessing & visualization/preprocessing/3-categorial_data (LabelEncoder, OneHotEncoder).py",
+		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/04 Data preprocessing & visualization/preprocessing/2-missing_values.py",
+		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/04 Data preprocessing & visualization/preprocessing/1-import_data.py",
+		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/06 Classification/solved_problems/02 CreditScore with Logistic Regression/CreditScore.py",
+		"/F/courses/ML/Udemy - Real Data Science Problems with Python/12 Sentiment analysis and social media/attached_files/021 Sentiment analysis/selfdrive.py",
+		"/F/courses/ML/Udemy - Real Data Science Problems with Python/12 Sentiment analysis and social media/attached_files/022 Sentiment analysis on self driving cars/selfdrive2.py",
+		"/F/courses/ML/Udemy_ML_A-Z_Python_and_R/02 --- Part 1 Data Preprocessing ---/006 Welcome to Part 1 - Data Preprocessing.srt",
+		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/05 Regression/basic_snippet_code/Simple Linear Regression/LinearRegression.py",
+		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/05 Regression/basic_snippet_code/Polynomial Regression/PolyRegression with pipeline.py",
+		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/05 Regression/basic_snippet_code/Linear Regression/LinearRegression.py",
+		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/05 Regression/basic_snippet_code/PolyRegression.py",
+		"/C/Users/Eslam Jekso/Desktop/Convolutional_Neural_Networks/cnn.py",
+		"/F/courses/ML/Udacity ML Nano/5. P3 Creating Customer Segments/1. Unsupervised Learning/5. Feature Scaling/10.2 Min_Max Rescaler Coding Quiz.py",
+		"/C/Users/Eslam Jekso/Desktop/tensorflow_cookbook-master/tensorflow_cookbook-master/11_More_with_TensorFlow/02_Working_with_a_Genetic_Algorithm/02_genetic_algorithm.py",
+		"/C/xampp/apache/conf/extra/httpd-vhosts.conf",
+		"/C/xampp/apache/conf/extra/httpd-xampp.conf",
+		"/C/xampp/apache/conf/extra/httpd-ssl.conf",
+		"/C/xampp/htdocs/dbproject/app/Http/routes.php",
+		"/C/xampp/htdocs/dbproject/config/services.php",
+		"/C/xampp/htdocs/smartclock/app/Device.php",
+		"/C/xampp/htdocs/smartclock/app/Http/Controllers/WebSystemController.php",
+		"/C/xampp/htdocs/smartclock/app/Http/routes.php",
+		"/F/courses/udacity ml nano/4. P2 Build a Student Intervention System/1. Supervised Learning/3. More Decision Trees/7.1 Coding A Decision Tree.py",
+		"/C/xampp/htdocs/dbproject/composer.json",
+		"/F/courses/udacity ml nano/3.P1 Predicting Boston Housing Prices/1.Model Evaluation and Validation/10. Training & Testing/2.1 Train-Test Split in sklearn.py",
+		"/F/courses/udacity ml nano/2. P0 Titanic Survival Exploration/titanic_visualizations.py",
+		"/F/courses/udacity ml nano/3.P1 Predicting Boston Housing Prices/1.Model Evaluation and Validation/5. Numpy & Pandas Tutorials/3. Numpy Playground.py",
+		"/C/xampp/htdocs/smartclock/app/Http/Controllers/APISystemController.php",
+		"/C/xampp/htdocs/smartclock/app/User.php",
+		"/C/xampp/htdocs/moove/app/Http/routes.php",
+		"/C/xampp/htdocs/moove/app/Http/Controllers/AppController.php",
+		"/C/xampp/htdocs/moove/.env",
+		"/C/xampp/htdocs/fuckinDBProject/resources/views/group_posts.blade.php",
+		"/C/xampp/htdocs/fuckinDBProject/app/User.php",
+		"/C/xampp/htdocs/fuckinDBProject/resources/views/groups.blade.php",
+		"/C/xampp/htdocs/fuckinDBProject/app/Http/Controllers/AppController.php",
+		"/C/xampp/htdocs/news/app/Editor.php",
+		"/C/Users/Eslam Jekso/Desktop/home/groups.html",
+		"/C/Users/Eslam Jekso/Desktop/Group-Posts/Group Posts/assets/group_posts.html",
+		"/C/xampp/htdocs/el3l2/index.php",
+		"/C/Users/Eslam Jekso/Desktop/assets/Login-page.html",
+		"/C/Users/Eslam Jekso/Desktop/New folder - Copy/.ftpquota",
+		"/C/Users/Eslam Jekso/Desktop/New folder - Copy/.ftpconfig",
+		"/C/xampp/htdocs/move/.env",
+		"/C/xampp/htdocs/news/app/User.php",
+		"/C/xampp/htdocs/news/app/Http/Controllers/AdminController.php",
+		"/C/xampp/htdocs/news/database/factories/ModelFactory.php",
+		"/C/xampp/htdocs/news/database/seeds/UsersTableSeeder.php",
+		"/C/xampp/htdocs/news/public/.htaccess",
+		"/C/Users/Eslam Jekso/Desktop/agriculture2day/template UI - Copy/category.html",
+		"/C/Users/Eslam Jekso/Desktop/ddd.txt",
+		"/C/Users/Eslam Jekso/Desktop/agriculture2day/template UI - Copy/article.html",
+		"/C/Users/Eslam Jekso/Desktop/agriculture2day/template UI - Copy/Home.html",
+		"/C/Users/Eslam Jekso/Downloads/Article Page/css/style.css",
+		"/C/Users/Eslam Jekso/Desktop/agriculture2day/template UI/Home.html",
+		"/C/Users/Eslam Jekso/Desktop/agriculture2day/template UI/main_layout.html",
+		"/C/Users/Eslam Jekso/Downloads/Article Page/Article Page.html",
+		"/C/Users/Eslam Jekso/Desktop/Home-Final/css/style.css",
+		"/C/Users/Eslam Jekso/Desktop/Home-Final/Home - Copy.html",
+		"/C/xampp/htdocs/news/public/front/css/font-awesome.min.css",
+		"/C/xampp/htdocs/news/resources/views/front/layouts/main_layout.blade.php",
+		"/C/xampp/htdocs/news/resources/views/front/home.blade.php",
+		"/C/Users/Eslam Jekso/Desktop/Home-Final/Home.html",
+		"/C/Users/Eslam Jekso/Desktop/imgrec/main.py",
+		"/C/xampp/htdocs/news/resources/views/admin/dashboard.blade.php",
+		"/C/xampp/htdocs/news/resources/views/admin/login.blade.php",
+		"/C/Python27/Lib/site-packages/cv2/opencv_ffmpeg320.dll",
+		"/C/Python27/Lib/site-packages/cv2/__init__.py",
+		"/C/Python27/Lib/site-packages/cv2/__init__.pyc",
+		"/C/xampp/htdocs/news/resources/views/admin/editors/addeditor.blade.php",
+		"/C/xampp/htdocs/news/resources/views/admin/editors/alleditors.blade.php",
+		"/C/xampp/htdocs/news/resources/views/admin/layouts/main_layout.blade.php",
+		"/C/xampp/htdocs/news/resources/views/admin/authors/addauthor.blade.php",
+		"/C/xampp/htdocs/news/resources/views/admin/authors/allauthors.blade.php",
+		"/C/xampp/htdocs/news/resources/views/admin/news/addnew.blade.php",
+		"/C/xampp/htdocs/news/resources/views/admin/news/allnews.blade.php",
+		"/C/xampp/htdocs/news/public/css/styles.css",
+		"/C/xampp/htdocs/news/app/Http/routes.php",
+		"/C/xampp/htdocs/news/app/TheNew.php",
+		"/C/xampp/htdocs/news/app/Http/Middleware/OwnTheNew.php",
+		"/C/xampp/htdocs/news/resources/views/admin/news/editnew.blade.php",
+		"/C/xampp/htdocs/news/app/Http/Kernel.php",
+		"/C/xampp/htdocs/news/app/Http/Middleware/IsAdmin.php",
+		"/C/xampp/htdocs/news/app/Console/Kernel.php",
+		"/C/xampp/htdocs/news/app/NewImg.php",
+		"/C/Users/Eslam Jekso/Downloads/categories.sql",
+		"/C/xampp/htdocs/news/database/migrations/2017_04_21_191135_create_editors_table.php",
+		"/C/xampp/htdocs/news/database/migrations/2017_04_21_191150_create_news_table.php",
+		"/C/xampp/htdocs/news/app/Http/Middleware/Authenticate.php",
+		"/C/xampp/htdocs/news/app/Http/Middleware/RedirectIfAuthenticated.php",
+		"/C/Users/Eslam Jekso/AppData/Roaming/Sublime Text 3/Packages/User/newfunc.sublime-snippet",
+		"/C/xampp/htdocs/news/database/seeds/NewsTableSeeder.php",
+		"/C/xampp/htdocs/news/app/Category.php",
+		"/C/xampp/htdocs/news/database/seeds/EditorsTableSeeder.php",
+		"/C/xampp/htdocs/news/database/seeds/DatabaseSeeder.php",
+		"/C/xampp/htdocs/news/app/New.php",
+		"/C/xampp/htdocs/news/database/migrations/2017_04_21_191216_create_new_images_table.php",
+		"/C/xampp/htdocs/news/database/migrations/2017_04_21_191120_create_categories_table.php",
+		"/C/xampp/htdocs/news/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/C/xampp/htdocs/news/.env",
+		"/C/xampp/htdocs/throttleCTF/resources/views/auth/login.blade.php",
+		"/C/xampp/htdocs/firewall/vendor/shieldfy/shieldfy-php-client/src/Guard.php",
+		"/C/xampp/htdocs/firewall/vendor/autoload.php",
+		"/C/xampp/htdocs/firewall/code.php",
+		"/C/xampp/htdocs/firewall/squnity/payloads/LFI.php",
+		"/C/xampp/htdocs/firewall/squnity/main.php",
+		"/C/xampp/htdocs/firewall/squnity/read.php",
+		"/C/xampp/htdocs/firewall/squnity/payloads/LFI/lfi_payloads.txt",
+		"/C/xampp/htdocs/firewall/squnity/test.txt",
+		"/C/xampp/htdocs/firewall/squnity/lfi.json",
+		"/C/xampp/htdocs/firewall/squnity/payloads/simple.txt",
+		"/C/xampp/htdocs/firewall/about.txt"
+	],
+	"find":
+	{
+		"height": 32.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"SSL Virtual Host Context",
+			"../assets/",
+			"::",
+			"New",
+			"passwd",
+			",",
+			"'",
+			"user",
+			"flag"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 70.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "mov_project.sublime-project",
+	"replace":
+	{
+		"height": 60.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"group",
+				"resources\\views\\group_posts.blade.php"
+			],
+			[
+				"user",
+				"app\\User.php"
+			],
+			[
+				"lo",
+				"resources\\views\\admin\\login.blade.php"
+			],
+			[
+				"dash",
+				"resources\\views\\admin\\dashboard.blade.php"
+			],
+			[
+				"main",
+				"resources\\views\\admin\\layouts\\main_layout.blade.php"
+			],
+			[
+				"added",
+				"resources\\views\\admin\\editors\\addeditor.blade.php"
+			],
+			[
+				"alled",
+				"resources\\views\\admin\\editors\\alleditors.blade.php"
+			],
+			[
+				"addau",
+				"resources\\views\\admin\\authors\\addauthor.blade.php"
+			],
+			[
+				"all",
+				"resources\\views\\admin\\authors\\allauthors.blade.php"
+			],
+			[
+				"addne",
+				"resources\\views\\admin\\news\\addnew.blade.php"
+			],
+			[
+				"ma",
+				"resources\\views\\admin\\layouts\\main_layout.blade.php"
+			],
+			[
+				"alln",
+				"resources\\views\\admin\\news\\allnews.blade.php"
+			],
+			[
+				"add",
+				"resources\\views\\admin\\news\\addnew.blade.php"
+			],
+			[
+				"adde",
+				"resources\\views\\admin\\editors\\addeditor.blade.php"
+			],
+			[
+				"then",
+				"app\\TheNew.php"
+			],
+			[
+				"thenew",
+				"app\\TheNew.php"
+			],
+			[
+				"edit",
+				"app\\Editor.php"
+			],
+			[
+				"ow",
+				"app\\Http\\Middleware\\OwnTheNew.php"
+			],
+			[
+				"editn",
+				"resources\\views\\admin\\news\\editnew.blade.php"
+			],
+			[
+				"isa",
+				"app\\Http\\Middleware\\IsAdmin.php"
+			],
+			[
+				"ker",
+				"app\\Console\\Kernel.php"
+			],
+			[
+				"own",
+				"app\\Http\\Middleware\\OwnTheNew.php"
+			],
+			[
+				"new",
+				"app\\NewImg.php"
+			],
+			[
+				"logi",
+				"resources\\views\\admin\\login.blade.php"
+			],
+			[
+				"addn",
+				"resources\\views\\admin\\news\\addnew.blade.php"
+			],
+			[
+				"the",
+				"app\\TheNew.php"
+			],
+			[
+				"allnew",
+				"resources\\views\\admin\\news\\allnews.blade.php"
+			],
+			[
+				"user.",
+				"app\\User.php"
+			],
+			[
+				"admin",
+				"app\\Http\\Controllers\\AdminController.php"
+			],
+			[
+				"throt",
+				"vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 244.0,
+	"status_bar_visible": false,
+	"template_settings":
+	{
+	}
+}
