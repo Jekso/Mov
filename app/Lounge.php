@@ -4,7 +4,9 @@ namespace App;
 
 use App\User;
 use App\Group;
+use App\LoungeLike;
 use App\LoungeImage;
+use App\LoungeComment;
 use App\LoungePollOption;
 use Illuminate\Database\Eloquent\Model;
 
@@ -41,5 +43,15 @@ class Lounge extends Model
     public function poll_options()
     {
     	return $this->hasMany(LoungePollOption::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(LoungeComment::class);
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(LoungeLike::class);
     }
 }

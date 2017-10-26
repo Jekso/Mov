@@ -11,27 +11,37 @@ class GroupController extends Controller
 
     public function discover( )
     {
-        
+        return 'discover' ;
+    }
+
+    public function join( )
+    {
+        return 'join' ;
     }
 
     public function index( )
     {
-        
+        return 'index' ;
     }
 
-    public function create( )
+    public function show()
     {
-        
+        return 'show' ;
+    }
+
+    public function store( )
+    {
+        return 'store' ;
     }
 
     public function update( )
     {
-        
+        return 'update' ;
     }
 
     public function delete( )
     {
-        
+        return 'delete' ;
     }
 
 }

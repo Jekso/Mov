@@ -4,9 +4,11 @@ namespace App;
 
 use App\User;
 use App\Group;
+use App\DataLike;
 use App\DataLink;
 use App\DataImage;
 use App\DataVoice;
+use App\DataComment;
 use Illuminate\Database\Eloquent\Model;
 
 class Data extends Model
@@ -45,5 +47,15 @@ class Data extends Model
     public function voice_notes()
     {
     	return $this->hasMany(DataVoice::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(DataComment::class);
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(DataLike::class);
     }
 }
