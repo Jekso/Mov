@@ -1,10 +1,23 @@
 <?php
 
 /**
+* ---------------------------------------- [ Helpers Routes START ] ----------------------------------------
+*/
+
+Route::get('helpers/get-tags', 'HelperController@get_tags');
+
+/**
+* ---------------------------------------- [ Helpers Routes END ] ----------------------------------------
+*/
+
+
+
+/**
 * ---------------------------------------- [ Auth Routes START ] ----------------------------------------
 */
 
 Route::group(['namespace' => 'Auth'], function () {
+	Route::get('register/get-roles', 'AuthController@get_roles');
     Route::post('register', 'AuthController@register');
 	Route::post('login', 'AuthController@login');
 	Route::post('reset-password', 'AuthController@reset_password');

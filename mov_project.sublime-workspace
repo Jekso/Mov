@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"Auth",
+				"AuthController"
+			],
+			[
 				"req",
 				"request"
 			],
@@ -76,19 +80,10 @@
 	"buffers":
 	[
 		{
-			"file": "routes/api.php",
+			"file": "app/Http/Controllers/Auth/AuthController.php",
 			"settings":
 			{
-				"buffer_size": 982,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Http/Controllers/Group/GroupController.php",
-			"settings":
-			{
-				"buffer_size": 435,
+				"buffer_size": 940,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -139,41 +134,86 @@
 		"/C/xampp/htdocs/mov/app",
 		"/C/xampp/htdocs/mov/app/Http",
 		"/C/xampp/htdocs/mov/app/Http/Controllers",
-		"/C/xampp/htdocs/mov/app/Http/Controllers/Group",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Auth",
+		"/C/xampp/htdocs/mov/app/Http/Responses",
+		"/C/xampp/htdocs/mov/app/Http/Responses/Auth",
 		"/C/xampp/htdocs/mov/routes"
 	],
 	"file_history":
 	[
+		"/C/xampp/htdocs/mov/routes/api.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/HelperController.php",
+		"/C/xampp/htdocs/mov/app/Http/Responses/Helpers/InterestTagsResponse.php",
+		"/C/xampp/htdocs/mov/app/Http/Responses/Auth/UserRolesResponse.php",
+		"/C/xampp/htdocs/mov/app/Http/Responses/Auth/InterestTagsResponse.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Auth/AuthController.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Controller.php",
+		"/C/xampp/htdocs/mov/app/Http/Responses/IResponsible.php",
+		"/C/xampp/htdocs/mov/app/Responses/Auth/InterestTagsResponse.php",
+		"/C/xampp/htdocs/mov/app/Responses/Auth/UserRolesResponse.php",
+		"/C/xampp/htdocs/mov/app/Responses/IResponsible.php",
+		"/C/xampp/htdocs/mov/app/Responses/Auth/Register.php",
+		"/C/xampp/htdocs/mov/routes/console.php",
+		"/F/mov/app/Console/Kernel.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/Question/QuestionSavedController.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/Question/Answer/AnswerCommentController.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/Question/Answer/AnswerController.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/Data/DataSavedController.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/Lounge/LoungePollController.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/Data/DataLikeController.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/Question/QuestionLikeController.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/Assignment/AssignmentLikeController.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/Lounge/LoungeLikeController.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/Data/DataController.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/Question/QuestionController.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/Assignment/AssignmentController.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/Question/QuestionCommentController.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/Data/DataCommentController.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/Assignment/AssignmentCommentController.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/Lounge/LoungeCommentController.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/Lounge/LoungeController.php",
+		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/GroupController.php",
+		"/C/xampp/htdocs/mov/app/DataLike.php",
+		"/C/xampp/htdocs/mov/app/QuestionComment.php",
+		"/C/xampp/htdocs/mov/app/QuestionLike.php",
+		"/C/xampp/htdocs/mov/app/DataComment.php",
+		"/C/xampp/htdocs/mov/app/LoungeLike.php",
+		"/C/xampp/htdocs/mov/app/AssignmentLike.php",
+		"/C/xampp/htdocs/mov/app/AssignmentComment.php",
+		"/C/xampp/htdocs/mov/app/LoungeComment.php",
+		"/C/xampp/htdocs/mov/app/Question.php",
+		"/C/xampp/htdocs/mov/app/Lounge.php",
+		"/C/xampp/htdocs/mov/app/Assignment.php",
+		"/C/xampp/htdocs/mov/app/Data.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_165652_create_data_comments_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_170002_create_assignment_likes_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_165653_create_data_likes_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_146139_create_lounge_comments_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_146140_create_lounge_likes_table.php",
+		"/C/xampp/htdocs/mov/database/migrations/2017_10_25_170001_create_assignment_comments_table.php",
+		"/C/xampp/htdocs/mov/routes/web.php",
 		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/QuestionController.php",
 		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/AssignmentController.php",
 		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/DataController.php",
 		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/LoungeController.php",
-		"/C/xampp/htdocs/mov/app/Http/Controllers/Auth/AuthController.php",
-		"/C/xampp/htdocs/mov/app/Http/Controllers/Controller.php",
 		"/C/Users/Eslam Jekso/AppData/Roaming/Sublime Text 3/Packages/User/fn.sublime-snippet",
 		"/C/xampp/htdocs/mov/app/Group.php",
 		"/C/xampp/htdocs/mov/app/Answer.php",
 		"/C/xampp/htdocs/mov/app/AnswerImage.php",
 		"/C/xampp/htdocs/mov/app/AnswerComment.php",
-		"/C/xampp/htdocs/mov/app/Question.php",
-		"/C/xampp/htdocs/mov/app/QuestionComment.php",
 		"/C/xampp/htdocs/mov/app/QuestionImage.php",
 		"/C/xampp/htdocs/mov/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
-		"/C/xampp/htdocs/mov/app/Data.php",
-		"/C/xampp/htdocs/mov/app/Assignment.php",
 		"/C/xampp/htdocs/mov/app/DataVoiceContent.php",
 		"/C/xampp/htdocs/mov/app/DataImageContent.php",
 		"/C/xampp/htdocs/mov/app/DataImage.php",
 		"/C/xampp/htdocs/mov/app/DataVoice.php",
 		"/C/xampp/htdocs/mov/app/DataLink.php",
-		"/C/xampp/htdocs/mov/app/Lounge.php",
 		"/C/xampp/htdocs/mov/app/InterestTag.php",
 		"/C/xampp/htdocs/mov/app/LoungePollOption.php",
 		"/C/xampp/htdocs/mov/app/LoungeImage.php",
 		"/C/xampp/htdocs/mov/app/User.php",
 		"/C/xampp/htdocs/mov/app/GroupAdditionalInfo.php",
 		"/C/xampp/htdocs/mov/app/UserRole.php",
-		"/C/xampp/htdocs/mov/app/Http/Controllers/Group/GroupController.php",
 		"/C/Users/Eslam Jekso/AppData/Roaming/Sublime Text 3/Packages/User/PHP Companion.sublime-settings",
 		"/C/Users/Eslam Jekso/AppData/Roaming/Sublime Text 3/Packages/PHP Companion/PHP Companion.sublime-settings",
 		"/C/Users/Eslam Jekso/AppData/Roaming/Sublime Text 3/Packages/User/btm.sublime-snippet",
@@ -228,50 +268,7 @@
 		"/C/xampp/htdocs/nunu/source/editor/ui/DropdownMenu.js",
 		"/C/Users/Eslam Jekso/Desktop/nunu.min.js",
 		"/C/xampp/htdocs/file/nunu.min.js",
-		"/F/courses/ML/Udemy_ML_A-Z_Python_and_R/22 Hierarchical Clustering/attached_files/120 HC in Python - Step 1/hc.py",
-		"/C/xampp/htdocs/file/index.html",
-		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/07 Clustering/solved_problems/01 Universities problem using KMeans Clustering/K Means Clustering Project .ipynb",
-		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/06 Classification/basic_snippet_code/DecisionTreeClassifier.py",
-		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/05 Regression/basic_snippet_code/02 Multiple Linear Regression/multi_linear_regression.py",
-		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/08 Association Rule Learning/Apriori Algorithm/apyori.py",
-		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/07 Clustering/basic_snippet_code/KMeans/Mall_Customers.csv",
-		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/07 Clustering/basic_snippet_code/KMeansAlgorithm.py",
-		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/04 Data preprocessing & visualization/preprocessing/4-categorial_data (get_dummies).py",
-		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/04 Data preprocessing & visualization/preprocessing/3-categorial_data (LabelEncoder, OneHotEncoder).py",
-		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/04 Data preprocessing & visualization/preprocessing/2-missing_values.py",
-		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/04 Data preprocessing & visualization/preprocessing/1-import_data.py",
-		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/06 Classification/solved_problems/02 CreditScore with Logistic Regression/CreditScore.py",
-		"/F/courses/ML/Udemy - Real Data Science Problems with Python/12 Sentiment analysis and social media/attached_files/021 Sentiment analysis/selfdrive.py",
-		"/F/courses/ML/Udemy - Real Data Science Problems with Python/12 Sentiment analysis and social media/attached_files/022 Sentiment analysis on self driving cars/selfdrive2.py",
-		"/F/courses/ML/Udemy_ML_A-Z_Python_and_R/02 --- Part 1 Data Preprocessing ---/006 Welcome to Part 1 - Data Preprocessing.srt",
-		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/05 Regression/basic_snippet_code/Simple Linear Regression/LinearRegression.py",
-		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/05 Regression/basic_snippet_code/Polynomial Regression/PolyRegression with pipeline.py",
-		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/05 Regression/basic_snippet_code/Linear Regression/LinearRegression.py",
-		"/C/Users/Eslam Jekso/Desktop/Machine-Learning-Playground/05 Regression/basic_snippet_code/PolyRegression.py",
-		"/C/Users/Eslam Jekso/Desktop/Convolutional_Neural_Networks/cnn.py",
-		"/F/courses/ML/Udacity ML Nano/5. P3 Creating Customer Segments/1. Unsupervised Learning/5. Feature Scaling/10.2 Min_Max Rescaler Coding Quiz.py",
-		"/C/Users/Eslam Jekso/Desktop/tensorflow_cookbook-master/tensorflow_cookbook-master/11_More_with_TensorFlow/02_Working_with_a_Genetic_Algorithm/02_genetic_algorithm.py",
-		"/C/xampp/apache/conf/extra/httpd-vhosts.conf",
-		"/C/xampp/apache/conf/extra/httpd-xampp.conf",
-		"/C/xampp/apache/conf/extra/httpd-ssl.conf",
-		"/C/xampp/htdocs/dbproject/app/Http/routes.php",
-		"/C/xampp/htdocs/dbproject/config/services.php",
-		"/C/xampp/htdocs/smartclock/app/Device.php",
-		"/C/xampp/htdocs/smartclock/app/Http/Controllers/WebSystemController.php",
-		"/C/xampp/htdocs/smartclock/app/Http/routes.php",
-		"/F/courses/udacity ml nano/4. P2 Build a Student Intervention System/1. Supervised Learning/3. More Decision Trees/7.1 Coding A Decision Tree.py",
-		"/C/xampp/htdocs/dbproject/composer.json",
-		"/F/courses/udacity ml nano/3.P1 Predicting Boston Housing Prices/1.Model Evaluation and Validation/10. Training & Testing/2.1 Train-Test Split in sklearn.py",
-		"/F/courses/udacity ml nano/2. P0 Titanic Survival Exploration/titanic_visualizations.py",
-		"/F/courses/udacity ml nano/3.P1 Predicting Boston Housing Prices/1.Model Evaluation and Validation/5. Numpy & Pandas Tutorials/3. Numpy Playground.py",
-		"/C/xampp/htdocs/smartclock/app/Http/Controllers/APISystemController.php",
-		"/C/xampp/htdocs/smartclock/app/User.php",
-		"/C/xampp/htdocs/moove/app/Http/routes.php",
-		"/C/xampp/htdocs/moove/app/Http/Controllers/AppController.php",
-		"/C/xampp/htdocs/moove/.env",
-		"/C/xampp/htdocs/fuckinDBProject/resources/views/group_posts.blade.php",
-		"/C/xampp/htdocs/fuckinDBProject/app/User.php",
-		"/C/xampp/htdocs/fuckinDBProject/resources/views/groups.blade.php"
+		"/F/courses/ML/Udemy_ML_A-Z_Python_and_R/22 Hierarchical Clustering/attached_files/120 HC in Python - Step 1/hc.py"
 	],
 	"find":
 	{
@@ -289,6 +286,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"question",
+			"lounge",
 			"GroupAssignment",
 			"GroupData",
 			"GroupLounge",
@@ -309,6 +308,10 @@
 		"regex": false,
 		"replace_history":
 		[
+			"answer",
+			"data",
+			"question",
+			"assignment",
 			"Assignment",
 			"Data",
 			"Lounge",
@@ -329,47 +332,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "routes/api.php",
+					"file": "app/Http/Controllers/Auth/AuthController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 982,
+						"buffer_size": 940,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								483,
-								483
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 159.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/Http/Controllers/Group/GroupController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 435,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								200,
-								200
+								940,
+								940
 							]
 						],
 						"settings":
@@ -379,10 +354,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 111.0,
+						"translation.y": 449.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -427,7 +402,7 @@
 	"project": "mov_project.sublime-project",
 	"replace":
 	{
-		"height": 114.0
+		"height": 58.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -436,6 +411,38 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"api",
+				"routes\\api.php"
+			],
+			[
+				"ires",
+				"app\\Responses\\IResponsible.php"
+			],
+			[
+				"con",
+				"routes\\console.php"
+			],
+			[
+				"lounge_c",
+				"database\\migrations\\2017_10_25_146139_create_lounge_comments_table.php"
+			],
+			[
+				"loun",
+				"app\\Lounge.php"
+			],
+			[
+				"auth",
+				"app\\Http\\Controllers\\Auth\\AuthController.php"
+			],
+			[
+				"groupcon",
+				"app\\Http\\Controllers\\Group\\GroupController.php"
+			],
+			[
+				"web",
+				"routes\\web.php"
+			],
 			[
 				"use",
 				"app\\User.php"
@@ -597,7 +604,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 249.0,
+	"side_bar_width": 281.0,
 	"status_bar_visible": false,
 	"template_settings":
 	{
