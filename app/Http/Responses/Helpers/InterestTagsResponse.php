@@ -19,6 +19,6 @@ class InterestTagsResponse implements IResponsible
 
 	public function jsonize()
 	{
-		return ['tags' => $this->tags->pluck('tag', 'id')];
+		return ['tags' => $this->tags];
 	}
 }

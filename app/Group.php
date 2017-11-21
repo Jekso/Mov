@@ -4,6 +4,7 @@ namespace App;
 
 
 use App\Data;
+use App\User;
 use App\Lounge;
 use App\Question;
 use App\Assignment;
@@ -13,6 +14,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Group extends Model
 {
+
+    protected $hidden = ['id', 'updated_at', 'pivot'];
 
     // group type Constants
 	const GENERAL_GROUP  = 0;
@@ -34,6 +37,12 @@ class Group extends Model
     {
     	return $this->hasOne(GroupAdditionalInfo::class);
     }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
 
     public function interest_tags()
     {

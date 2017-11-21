@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests\Auth;
 
+use App\UserRole;
+use App\InterestTag;
 use Illuminate\Foundation\Http\FormRequest;
 
 class RegisterRequest extends FormRequest
@@ -13,7 +15,7 @@ class RegisterRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +25,17 @@ class RegisterRequest extends FormRequest
      */
     public function rules()
     {
+        $user_roles = UserRole::all()->implode('id', ',');
+        $interest_tags = InterestTag::all()->implode('id', ',');
         return [
-            //
+            'username'   => 'required|max:190',
+            'email'      => 'required|email|unique:users|max:190',
+            'password'   => 'required|confirmed|max:190|min:8|alpha_num',
+            'birth_date' => 'date',
+            'gender'     => 'in:m,f',
+            'avatar'     => 'encoded_str_imagable',
+            'role'       => 'required|in:'.$user_roles,
+            'tags.*'     => 'in:'.$interest_tags
         ];
     }
 }

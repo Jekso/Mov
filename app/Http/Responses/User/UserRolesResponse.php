@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Responses\Auth;
+namespace App\Http\Responses\User;
 
 use App\Http\Responses\IResponsible;
 use Illuminate\Database\Eloquent\Collection;
@@ -19,6 +19,6 @@ class UserRolesResponse implements IResponsible
 
 	public function jsonize()
 	{
-		return ['roles' => $this->roles->pluck('role', 'id')];
+		return ['roles' => $this->roles];
 	}
 }

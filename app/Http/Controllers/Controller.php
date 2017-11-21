@@ -17,8 +17,9 @@ class Controller extends BaseController
     	return response()->json($response->jsonize(), 200);
     }
 
-    public function error_response(IResponsible $response, $error_code = 400)
+    public function error_response(IResponsible $response, $error_code = 422)
     {
     	return response()->json(['errors' => $response->jsonize()], $error_code);
     }
+
 }

@@ -1,14 +1,22 @@
 <?php
 
+\DB::listen(function ($query) {
+	var_dump($query->sql);
+	var_dump($query->time);
+});
+
 /**
 * ---------------------------------------- [ Helpers Routes START ] ----------------------------------------
 */
 
 Route::get('helpers/get-tags', 'HelperController@get_tags');
+Route::get('register/get-roles', 'UserController@get_roles');
 
 /**
 * ---------------------------------------- [ Helpers Routes END ] ----------------------------------------
 */
+
+
 
 
 
@@ -17,7 +25,6 @@ Route::get('helpers/get-tags', 'HelperController@get_tags');
 */
 
 Route::group(['namespace' => 'Auth'], function () {
-	Route::get('register/get-roles', 'AuthController@get_roles');
     Route::post('register', 'AuthController@register');
 	Route::post('login', 'AuthController@login');
 	Route::post('reset-password', 'AuthController@reset_password');
@@ -30,6 +37,8 @@ Route::group(['namespace' => 'Auth'], function () {
 
 
 
+
+
 Route::group(['namespace' => 'Group',  'middleware' => 'auth:api', 'prefix' => 'groups'], function () {
 	
 	/**
@@ -39,7 +48,6 @@ Route::group(['namespace' => 'Group',  'middleware' => 'auth:api', 'prefix' => '
 	Route::get('/', 'GroupController@index');
 	Route::post('/', 'GroupController@store');
 	Route::get('discover', 'GroupController@discover');
-	Route::get('{group}', 'GroupController@show');
 	Route::put('{group}', 'GroupController@update');
 	Route::delete('{group}', 'GroupController@delete');
 	Route::post('{group}/join', 'GroupController@join');
