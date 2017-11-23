@@ -5,11 +5,11 @@ namespace App\Http\Controllers\Group;
 use App\Group;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Group\JoinGroupRequest;
+use App\Http\Responses\Errors\Errors;
 use App\Http\Requests\Group\StoreGroupRequest;
+use App\Http\Responses\DefaultSuccessResponse;
 use App\Http\Requests\Group\DeleteGroupRequest;
 use App\Http\Requests\Group\UpdateGroupRequest;
-use App\Http\Responses\Group\UserJoinedGroupsResponse;
 use App\Http\Responses\Group\UserDiscoverGroupsResponse;
 
 class GroupController extends Controller
@@ -23,17 +23,22 @@ class GroupController extends Controller
 
     public function discover(Request $request)
     {
-        $most_populer_groups    = Group::withCount('users')->orderBy('users_count', 'desc')->get();
-        $may_like_groups        = $request->user()->load('interest_tags.groups.users')
-                                ->interest_tags->pluck('groups')->flatten()
-                                ->unique('group_code');
+        $groups = Group::discover_groups();
+        $most_populer_groups = $groups['most_populer'];
+        $may_like_groups = $groups['may_like'];
         return $this->success_response(new UserDiscoverGroupsResponse($most_populer_groups, $may_like_groups));
     }
 
 
-    public function join(JoinGroupRequest $request)
+    public function join(Request $request, Group $group)
     {
-        return 'join' ;
+        // check if user is already joined the group
+        if($request->user()->is_joined($group))
+            return $this->error_response(Errors::USER_ALREADY_JOINED);
+
+        // join user to the group
+        $request->user()->groups()->attach($group->id);
+        return $this->success_response(new DefaultSuccessResponse());
     }
 
 

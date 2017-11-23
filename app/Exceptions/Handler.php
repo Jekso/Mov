@@ -3,11 +3,15 @@
 namespace App\Exceptions;
 
 use Exception;
+use App\Http\Traits\GetResponse;
+use App\Http\Responses\Errors\Errors;
 use Illuminate\Auth\AuthenticationException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
 {
+    use GetResponse;
     /**
      * A list of the exception types that should not be reported.
      *
@@ -44,6 +48,11 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if ($request->expectsJson())
+        {
+            if($exception instanceof ModelNotFoundException)
+                return $this->error_response(Errors::TESTING);
+        }
         return parent::render($request, $exception);
     }
 
@@ -57,7 +66,7 @@ class Handler extends ExceptionHandler
     protected function unauthenticated($request, AuthenticationException $exception)
     {
         if ($request->expectsJson()) {
-            return response()->json(['error' => 'Unauthenticated.'], 401);
+            return $this->error_response(Errors::UNAUTHENTICATED);
         }
 
         return redirect()->guest(route('login'));

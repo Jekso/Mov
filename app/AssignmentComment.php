@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class AssignmentComment extends Model
 {
     
+    
     /**
     * --------- Realationship functions ---------
     */

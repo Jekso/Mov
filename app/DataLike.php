@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class DataLike extends Model
 {
-    
+
     /**
     * --------- Realationship functions ---------
     */

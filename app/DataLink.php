@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class DataLink extends Model
 {
-    
+
     /**
     * --------- Realationship functions ---------
     */

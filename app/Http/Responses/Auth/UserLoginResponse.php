@@ -26,7 +26,7 @@ class UserLoginResponse implements IResponsible
 			    'api_token'  => $this->user->api_token,
 			    'birth_date' => $this->user->birth_date,
 			    'gender' 	 => ($this->user->gender == 'm') ? 'Male' : 'Female',
-			    'avatar' 	 => asset('files/images/'.$this->user->avatar),
+			    'avatar' 	 => asset('files/users/images/'.$this->user->avatar),
 			    'bio' 		 => $this->user->bio,
 			    'role'		 => $this->user->role->role,
 			    'tags'		 => $this->user->interest_tags->pluck('tag')

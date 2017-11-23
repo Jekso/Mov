@@ -11,6 +11,9 @@ use Illuminate\Database\Eloquent\Model;
 class Answer extends Model
 {
 
+    protected $touches = ['question'];
+
+
 	// is_true Constant
 	const ANSWER_IS_TRUE = 1;
 

@@ -15,7 +15,10 @@ class UserJoinedGroupsResponse implements IResponsible
 	function __construct($groups)
 	{
 		foreach ($groups as $group)
+		{
 			$group->type = ($group->type == 0) ? 'General' : 'Specific';
+			$group->last_active = $group->updated_at->diffForHumans();
+		}
 		$this->groups = $groups;
 	}
 

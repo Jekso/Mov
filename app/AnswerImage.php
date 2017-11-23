@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class AnswerImage extends Model
 {
+
     /**
     * --------- Realationship functions ---------
     */

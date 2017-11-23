@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class GroupAdditionalInfo extends Model
 {
 	
+	protected $touches = ['group'];
+
 	/**
     * --------- Realationship functions ---------
     */

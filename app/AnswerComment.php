@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class AnswerComment extends Model
 {
-    
+
     /**
     * --------- Realationship functions ---------
     */

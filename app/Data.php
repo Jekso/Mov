@@ -14,6 +14,9 @@ use Illuminate\Database\Eloquent\Model;
 class Data extends Model
 {
 
+    protected $touches = ['group'];
+
+
 	// Data type Constants
     const DATA_WITH_LINK = 0;
     const DATA_WITH_IMG  = 1;

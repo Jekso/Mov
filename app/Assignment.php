@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Assignment extends Model
 {
+    protected $touches = ['group'];
+
     
     /**
     * --------- Realationship functions ---------

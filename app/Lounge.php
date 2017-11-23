@@ -12,6 +12,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Lounge extends Model
 {
+    
+    protected $touches = ['group'];
 
 	// lounge type Constants
     const LOUNGE_WITH_NULL = 0;

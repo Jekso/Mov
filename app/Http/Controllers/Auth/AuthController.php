@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers\Auth;
 
-use Auth;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Responses\Errors\Errors;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RegisterRequest;
 use App\Http\Responses\Auth\UserLoginResponse;
+use App\Http\Responses\DefaultSuccessResponse;
 use App\Http\Requests\Auth\ResetPasswordRequest;
 use App\Http\Responses\Auth\UserRegisterResponse;
-use App\Http\Responses\Errors\UserLoginErrorResponse;
+
 
 class AuthController extends Controller
 {
@@ -24,7 +25,7 @@ class AuthController extends Controller
         $user->save_basic_data($request);
 
         // save avatar
-        $user->avatar = ($request->has('avatar')) ? $user->generate_avatar($request->avatar) : User::DEFAULT_IMG;
+        $user->avatar = ($request->has('avatar')) ? $user->generate_and_store_avatar($request->avatar) : User::DEFAULT_IMG;
         $user->save();
 
         // // save tags
@@ -47,12 +48,12 @@ class AuthController extends Controller
                 return $this->success_response(new UserLoginResponse($user)); 
             }
             else
-                $error = UserLoginErrorResponse::WRONG_PASSWORD;
+                $error = Errors::WRONG_PASSWORD;
         }
         else
-            $error = UserLoginErrorResponse::NOT_FOUND_USER;
+            $error = Errors::NOT_FOUND_USER;
 
-        return $this->error_response(new UserLoginErrorResponse($error));
+        return $this->error_response($error);
     }
 
 
@@ -66,6 +67,7 @@ class AuthController extends Controller
         $user->reset_password_token = $token;
         $user->save();
         // send mail to user
+        return $this->success_response(new DefaultSuccessResponse());
     }
 
     public function logout(Request $request)
@@ -73,5 +75,6 @@ class AuthController extends Controller
         $user = $request->user();
     	$user->api_token = str_random(60);
         $user->save();
+        return $this->success_response(new DefaultSuccessResponse());
     }
 }

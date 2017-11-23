@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class DataImage extends Model
 {
+
     
     /**
     * --------- Realationship functions ---------

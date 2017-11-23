@@ -13,6 +13,9 @@ use Illuminate\Database\Eloquent\Model;
 class Question extends Model
 {
 
+    protected $touches = ['group'];
+
+
 	// question_anonymous Const
 	const ASK_ANONYMOUSLY = 1;	
 

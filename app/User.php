@@ -40,12 +40,12 @@ class User extends Authenticatable
     * --------- Helper functions ---------
     */
 
-    public function generate_avatar($encoded_img_str)
+    public function generate_and_store_avatar($encoded_img_str)
     {
         $extension = explode(';', explode('/', $encoded_img_str)[1])[0];
         $image_name = str_random(40).'.'.$extension;
         $image = base64_decode(substr($encoded_img_str, strpos($encoded_img_str, ",")+1));
-        Storage::disk('images')->put($image_name, $image);
+        Storage::disk('users_images')->put($image_name, $image);
         return $image_name;
     }
 
@@ -61,6 +61,13 @@ class User extends Authenticatable
         $this->reset_password_token = str_random(60);
         $this->user_role_id         = $request->role;
     }
+
+
+    public function is_joined($group)
+    {       
+        return ($this->groups()->where('group_id', $group->id)->count() > 0);
+    }
+
 
 
 

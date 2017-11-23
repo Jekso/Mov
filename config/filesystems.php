@@ -55,15 +55,45 @@ return [
             'visibility' => 'public',
         ],
 
-        'images' => [
+        'users_images' => [
             'driver' => 'local',
-            'root' => public_path('files/images'),
+            'root' => public_path('files/users/images'),
             'visibility' => 'public',
         ],
 
-        'audio' => [
+        'groups_images' => [
             'driver' => 'local',
-            'root' => public_path('files/audio'),
+            'root' => public_path('files/groups/images'),
+            'visibility' => 'public',
+        ],
+
+        'data_images' => [
+            'driver' => 'local',
+            'root' => public_path('files/groups/data/images'),
+            'visibility' => 'public',
+        ],
+
+        'lounges_images' => [
+            'driver' => 'local',
+            'root' => public_path('files/groups/lounges/images'),
+            'visibility' => 'public',
+        ],
+
+        'questions_images' => [
+            'driver' => 'local',
+            'root' => public_path('files/groups/questions/images'),
+            'visibility' => 'public',
+        ],
+
+        'answers_images' => [
+            'driver' => 'local',
+            'root' => public_path('files/groups/questions/answers/images'),
+            'visibility' => 'public',
+        ],
+
+        'data_audio' => [
+            'driver' => 'local',
+            'root' => public_path('files/groups/data/audio'),
             'visibility' => 'public',
         ],
 

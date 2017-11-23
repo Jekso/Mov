@@ -1,9 +1,9 @@
 <?php
 
-\DB::listen(function ($query) {
-	var_dump($query->sql);
-	var_dump($query->time);
-});
+// \DB::listen(function ($query) {
+// 	var_dump($query->sql);
+// 	var_dump($query->time);
+// });
 
 /**
 * ---------------------------------------- [ Helpers Routes START ] ----------------------------------------
@@ -28,7 +28,7 @@ Route::group(['namespace' => 'Auth'], function () {
     Route::post('register', 'AuthController@register');
 	Route::post('login', 'AuthController@login');
 	Route::post('reset-password', 'AuthController@reset_password');
-	Route::post('logout', 'AuthController@logout');
+	Route::post('logout', 'AuthController@logout')->middleware('auth:api');
 });
     
 /**

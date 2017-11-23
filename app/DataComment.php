@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class DataComment extends Model
 {
+
     
     /**
     * --------- Realationship functions ---------
