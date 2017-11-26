@@ -14,20 +14,6 @@ class UserDiscoverGroupsResponse implements IResponsible
 
 	function __construct($most_populer_groups, $may_like_groups)
 	{
-		foreach ($may_like_groups as $group)
-		{
-			$group->type = ($group->type == 0) ? 'General' : 'Specific';
-			$group->last_active = $group->updated_at->diffForHumans();
-			$group->users_count = $group->users->count();
-			unset($group->users);
-		}
-		
-		foreach ($most_populer_groups as $group)
-		{
-			$group->type = ($group->type == 0) ? 'General' : 'Specific';
-			$group->last_active = $group->updated_at->diffForHumans();
-		}
-
 		$this->most_populer_groups = $most_populer_groups;
 		$this->may_like_groups = $may_like_groups;
 	}

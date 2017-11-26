@@ -7,20 +7,26 @@ use App\Data;
 use App\User;
 use App\Lounge;
 use App\Question;
+use Carbon\Carbon;
 use App\Assignment;
 use App\InterestTag;
 use App\GroupAdditionalInfo;
+use App\Http\Traits\Helpers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
 
 class Group extends Model
 {
+    use Helpers;
 
     protected $hidden = ['pivot'];
     public function getRouteKeyName()
     {
         return 'group_code';
     }
+
+    // default img
+    const DEFAULT_IMG = 'default.png';
 
     // group type Constants
 	const GENERAL_GROUP  = 0;
@@ -30,6 +36,24 @@ class Group extends Model
     // group is_private Constants
     const PUBLIC_GROUP  = 0;
     const PRIVATE_GROUP = 1;
+
+    public function getImgAttribute($value)
+    {
+        return asset('files/groups/images/'.$value);
+    }
+
+    public function getTypeAttribute($value)
+    {
+        return ($value == 0) ? 'General' : 'Specific';
+    }
+
+
+    public function getUpdatedAtAttribute($value)
+    {
+        return Carbon::parse($value)->diffForHumans();
+    }
+
+
 
 
     /**
@@ -63,6 +87,28 @@ class Group extends Model
                                     ->flatten()->unique('group_code')
                                     ->pluck('id');
         return $groups->whereIn('id', $group_with_user_tags_ids)->withCount('users')->get();
+    }
+
+
+    public function save_basic_data($request)
+    {
+        $this->name = $request->name;
+        $this->desc = $request->desc;
+        $this->is_private = $request->is_private;
+        $this->group_code = ($request->is_private) ? $request->group_code : str_random(10);
+        $this->type = ($request->type == 'Specific') ? self::SPECIFIC_GROUP : self::GENERAL_GROUP;
+        $this->img = ($request->has('img')) ? $this->generate_and_store_img($request->img, 'groups_images') : self::DEFAULT_IMG;
+    }
+
+
+    public function save_additional_info($request)  
+    {
+        $this->additional_info()->create([
+            'university'    => $request->input('additional_info.university'),
+            'faculty'       => $request->input('additional_info.faculty'),
+            'grade'         => $request->input('additional_info.grade'),
+            'year'          => $request->input('additional_info.year')
+        ]);
     }
 
 

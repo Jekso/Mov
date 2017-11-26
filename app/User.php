@@ -7,6 +7,7 @@ use App\Group;
 use App\Question;
 use App\UserRole;
 use App\InterestTag;
+use App\Http\Traits\Helpers;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -14,6 +15,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use Notifiable;
+    use Helpers;
 
 
     // Default Model Params
@@ -34,26 +36,28 @@ class User extends Authenticatable
     // default avatar
     const DEFAULT_IMG = 'default.png';
 
+    public function getAvatarAttribute($value)
+    {
+        return asset('files/users/images/'.$value);
+    }
+
+    public function getGenderAttribute($value)
+    {
+        return ($value == 'm') ? 'Male' : 'Female';
+    }
 
 
     /**
     * --------- Helper functions ---------
     */
 
-    public function generate_and_store_avatar($encoded_img_str)
-    {
-        $extension = explode(';', explode('/', $encoded_img_str)[1])[0];
-        $image_name = str_random(40).'.'.$extension;
-        $image = base64_decode(substr($encoded_img_str, strpos($encoded_img_str, ",")+1));
-        Storage::disk('users_images')->put($image_name, $image);
-        return $image_name;
-    }
 
     public function save_basic_data($request)
     {
         $this->username             = $request->username;
         $this->password             = bcrypt($request->password);
         $this->email                = $request->email;
+        $this->avatar = ($request->has('avatar')) ? $this->generate_and_store_img($request->avatar, 'users_images') : self::DEFAULT_IMG;
         $this->birth_date           = $request->birth_date;
         $this->gender               = $request->gender;
         $this->bio                  = $request->bio;

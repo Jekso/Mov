@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class GroupAdditionalInfo extends Model
 {
-	
+	protected $fillable = ['university', 'faculty', 'grade', 'year'];
 	protected $touches = ['group'];
 
 	/**

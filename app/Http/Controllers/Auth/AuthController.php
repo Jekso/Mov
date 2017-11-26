@@ -23,12 +23,9 @@ class AuthController extends Controller
         // save basic user's data
     	$user = new User;
         $user->save_basic_data($request);
-
-        // save avatar
-        $user->avatar = ($request->has('avatar')) ? $user->generate_and_store_avatar($request->avatar) : User::DEFAULT_IMG;
         $user->save();
 
-        // // save tags
+        // save tags
         $user->interest_tags()->attach($request->tags);
 
         return $this->success_response(new UserRegisterResponse($user));

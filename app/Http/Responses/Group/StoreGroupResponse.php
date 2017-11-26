@@ -8,19 +8,19 @@ use App\Http\Responses\IResponsible;
 /**
 * 
 */
-class UserJoinedGroupsResponse implements IResponsible
+class StoreGroupResponse implements IResponsible
 {
-	private $groups;
+	private $group;
 
-	function __construct($groups)
+	function __construct($group)
 	{
-		$this->groups = $groups;
+		$this->group = $group;
 	}
 
 	public function jsonize()
 	{
 		return [
-			'groups' => $this->groups
+			'group' => $this->group
 		];
 	}
 }

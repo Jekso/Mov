@@ -25,8 +25,8 @@ class UserRegisterResponse implements IResponsible
 			    'email' 	 => $this->user->email,
 			    'api_token'  => $this->user->api_token,
 			    'birth_date' => $this->user->birth_date,
-			    'gender' 	 => ($this->user->gender == 'm') ? 'Male' : 'Female',
-			    'avatar' 	 => asset('files/users/images/'.$this->user->avatar),
+			    'gender' 	 => $this->user->gender,
+			    'avatar' 	 => $this->user->avatar,
 			    'bio' 		 => $this->user->bio,
 			    'role'		 => $this->user->role->role,
 			    'tags'		 => $this->user->interest_tags->pluck('tag')

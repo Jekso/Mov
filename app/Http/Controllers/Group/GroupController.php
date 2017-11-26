@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Group;
 
+use App\User;
 use App\Group;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -10,6 +11,8 @@ use App\Http\Requests\Group\StoreGroupRequest;
 use App\Http\Responses\DefaultSuccessResponse;
 use App\Http\Requests\Group\DeleteGroupRequest;
 use App\Http\Requests\Group\UpdateGroupRequest;
+use App\Http\Responses\Group\StoreGroupResponse;
+use App\Http\Responses\Group\UserJoinedGroupsResponse;
 use App\Http\Responses\Group\UserDiscoverGroupsResponse;
 
 class GroupController extends Controller
@@ -17,7 +20,8 @@ class GroupController extends Controller
 
     public function index(Request $request)
     {
-        return $this->success_response(new UserJoinedGroupsResponse($request->user()->groups));
+        $groups = $request->user()->groups()->withCount('users')->orderBy('updated_at', 'DESC')->get();
+        return $this->success_response(new UserJoinedGroupsResponse($groups));
     }
 
 
@@ -45,7 +49,22 @@ class GroupController extends Controller
 
     public function store(StoreGroupRequest $request)
     {
-        return 'store' ;
+        // save group's basic data
+        $group = new Group;
+        $group->save_basic_data($request);
+        $group->save();
+
+        // save additional info if group_type == specific
+        if($request->type == 'Specific')
+            $group->save_additional_info($request);
+
+        // save tags
+        $group->interest_tags()->attach($request->tags);
+
+        // join the user to the group
+        $request->user()->groups()->attach($group->id, ['role' => User::GROUP_CREATOR]);
+
+        return $this->success_response(new StoreGroupResponse($group));
     }
 
     public function update(UpdateGroupRequest $request)
