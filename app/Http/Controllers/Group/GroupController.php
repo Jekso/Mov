@@ -69,7 +69,7 @@ class GroupController extends Controller
 
     public function update(UpdateGroupRequest $request)
     {
-        return 'update data' ;
+        return 'update group data' ;
     }
 
     public function delete(DeleteGroupRequest $request)
