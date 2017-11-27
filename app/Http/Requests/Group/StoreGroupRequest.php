@@ -27,11 +27,11 @@ class StoreGroupRequest extends FormRequest
         $interest_tags = InterestTag::all()->implode('id', ',');
         return [
             'group_code'            => 'required_if:is_private,1|unique:groups|min:10|max:190',
-            'name'                  => 'required|max:190',
+            'name'                  => 'required|min:2|max:190',
             'img'                   => 'encoded_str_imagable',
             'tags.*'                => 'in:'.$interest_tags,
-            'is_private'            => 'boolean',
-            'type'                  => 'in:General,Specific',
+            'is_private'            => 'required|boolean',
+            'type'                  => 'required|in:General,Specific',
             'additional_info.grade' => 'integer',
             'additional_info.year'  => 'integer',
         ];

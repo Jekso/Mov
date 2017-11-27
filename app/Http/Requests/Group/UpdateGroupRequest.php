@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Group;
 
+use App\InterestTag;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateGroupRequest extends FormRequest
@@ -23,8 +24,15 @@ class UpdateGroupRequest extends FormRequest
      */
     public function rules()
     {
+        $interest_tags = InterestTag::all()->implode('id', ',');
         return [
-            //
+            'name'                  => 'min:2|max:190',
+            'img'                   => 'encoded_str_imagable',
+            'tags.*'                => 'in:'.$interest_tags,
+            'is_private'            => 'boolean',
+            'type'                  => 'in:General,Specific',
+            'additional_info.grade' => 'integer',
+            'additional_info.year'  => 'integer',
         ];
     }
 }

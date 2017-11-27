@@ -10,8 +10,10 @@ class Errors
 
 	// groups_errors
 	const USER_ALREADY_JOINED = 'you already joined this group.';
+	const USER_NOT_JOINED = 'you already not joined this group.';
 
 	// general erros
 	const TESTING  = 'Stop Testing dude, 34an ana m4 tal3 deen omy coding we tegy t3mly feha Kevin metnek ya mtnaaaaak.';
 	const UNAUTHENTICATED  = 'Unauthenticated.';
+	const UNAUTHORIZED = 'Unauthorized.';
 }

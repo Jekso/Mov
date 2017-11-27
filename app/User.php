@@ -73,6 +73,15 @@ class User extends Authenticatable
     }
 
 
+    public function is_creator($group)
+    {
+        $group = $this->groups()->where('group_id', $group->id)->first();
+        if($group)
+            return ($group->pivot->role === self::GROUP_CREATOR);
+        return false;
+    }
+
+
 
 
     /**
@@ -86,7 +95,7 @@ class User extends Authenticatable
 
     public function groups()
     {
-        return $this->belongsToMany(Group::class);
+        return $this->belongsToMany(Group::class)->withPivot('role', 'is_banned');
     }
 
     public function interest_tags()

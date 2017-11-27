@@ -6,6 +6,7 @@ use Exception;
 use App\Http\Traits\GetResponse;
 use App\Http\Responses\Errors\Errors;
 use Illuminate\Auth\AuthenticationException;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
@@ -52,6 +53,8 @@ class Handler extends ExceptionHandler
         {
             if($exception instanceof ModelNotFoundException)
                 return $this->error_response(Errors::TESTING);
+            else if($exception instanceof AuthorizationException)
+                return $this->error_response(Errors::UNAUTHORIZED);
         }
         return parent::render($request, $exception);
     }

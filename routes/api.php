@@ -51,6 +51,7 @@ Route::group(['namespace' => 'Group',  'middleware' => 'auth:api', 'prefix' => '
 	Route::put('{group}', 'GroupController@update');
 	Route::delete('{group}', 'GroupController@delete');
 	Route::post('{group}/join', 'GroupController@join');
+	Route::post('{group}/leave', 'GroupController@leave');
 
 	/**
 	* ---------------------------------------- [ Group Routes END ] ----------------------------------------

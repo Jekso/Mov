@@ -42,6 +42,11 @@ class Group extends Model
         return asset('files/groups/images/'.$value);
     }
 
+    public function get_img_name()
+    {
+        return substr($this->img, strpos($this->img, "/files/groups/images/")+21);
+    }
+
     public function getTypeAttribute($value)
     {
         return ($value == 0) ? 'General' : 'Specific';
@@ -98,12 +103,33 @@ class Group extends Model
         $this->group_code = ($request->is_private) ? $request->group_code : str_random(10);
         $this->type = ($request->type == 'Specific') ? self::SPECIFIC_GROUP : self::GENERAL_GROUP;
         $this->img = ($request->has('img')) ? $this->generate_and_store_img($request->img, 'groups_images') : self::DEFAULT_IMG;
+        $this->save();
+    }
+
+    public function update_basic_data($request)
+    {
+        $this->name = $request->name;
+        $this->desc = $request->desc;
+        $this->is_private = $request->is_private;
+        $this->type = ($request->type == 'Specific') ? self::SPECIFIC_GROUP : self::GENERAL_GROUP;
+        $this->img = ($request->has('img')) ? $this->generate_and_store_img($request->img, 'groups_images') : $this->get_img_name();
+        $this->save();
     }
 
 
     public function save_additional_info($request)  
     {
         $this->additional_info()->create([
+            'university'    => $request->input('additional_info.university'),
+            'faculty'       => $request->input('additional_info.faculty'),
+            'grade'         => $request->input('additional_info.grade'),
+            'year'          => $request->input('additional_info.year')
+        ]);
+    }
+
+    public function update_additional_info($request)  
+    {
+        $this->additional_info()->update([
             'university'    => $request->input('additional_info.university'),
             'faculty'       => $request->input('additional_info.faculty'),
             'grade'         => $request->input('additional_info.grade'),
@@ -123,7 +149,7 @@ class Group extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class)->withPivot('role', 'is_banned');
     }
 
 
