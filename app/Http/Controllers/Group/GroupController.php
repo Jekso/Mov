@@ -58,7 +58,7 @@ class GroupController extends Controller
         if($request->type == 'Specific')
             $group->save_additional_info($request);
 
-        // save tags
+        // save group's tags
         $group->interest_tags()->attach($request->tags);
 
         // join the user to the group
