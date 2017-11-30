@@ -76,7 +76,7 @@ class GroupController extends Controller
         // save group's tags
         $group->interest_tags()->attach($request->tags);
 
-        // join the user to the group
+        // join the user to the group as a creator
         $request->user()->groups()->attach($group->id, ['role' => User::GROUP_CREATOR]);
 
         return $this->success_response(new StoreGroupResponse($group));

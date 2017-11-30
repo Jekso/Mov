@@ -6,6 +6,7 @@ use Exception;
 use App\Http\Traits\GetResponse;
 use App\Http\Responses\Errors\Errors;
 use Illuminate\Auth\AuthenticationException;
+use Illuminate\Validation\ValidationException;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
@@ -55,8 +56,19 @@ class Handler extends ExceptionHandler
                 return $this->error_response(Errors::TESTING);
             else if($exception instanceof AuthorizationException)
                 return $this->error_response(Errors::UNAUTHORIZED);
+            else if($exception instanceof ValidationException)
+                return $this->error_response($this->print_validation_errors($exception->validator->errors()->all()));
         }
         return parent::render($request, $exception);
+    }
+
+
+    private function print_validation_errors($errors)
+    {
+        $errors_txt = "";
+        foreach($errors as $message)
+            $errors_txt .= $message."\n";
+        return $errors_txt;
     }
 
     /**
