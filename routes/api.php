@@ -59,7 +59,7 @@ Route::group(['namespace' => 'Group',  'middleware' => 'auth:api', 'prefix' => '
 
 
 
-	Route::group(['prefix' => '{group}', 'middleware' => 'can:view,group'], function () {
+	Route::group(['prefix' => '{group}'], function () {
 
 		/**
 		* ------------------------------------ [ Group Lounges Routes START ] ------------------------------------

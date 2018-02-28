@@ -4,6 +4,7 @@ namespace App;
 
 use App\User;
 use App\Group;
+use Carbon\Carbon;
 use App\LoungeLike;
 use App\LoungeImage;
 use App\LoungeComment;
@@ -12,7 +13,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Lounge extends Model
 {
-    
+    protected $hidden = ['user_id', 'group_id'];
     protected $touches = ['group'];
 
 	// lounge type Constants
@@ -20,7 +21,21 @@ class Lounge extends Model
     const LOUNGE_WITH_IMG  = 1;
     const LOUNGE_WITH_POLL = 2;
 
+    public function getTypeAttribute($value)
+    {
+        if($value == 0)
+            $value = "NO_IMG_NO_POLL";
+        else if($value == 1)
+            $value = "LOUNGE_WITH_IMG";
+        else if($value == 2)
+            $value = "LOUNGE_WITH_POLL";
+        return $value;
+    }
 
+    public function getUpdatedAtAttribute($value)
+    {
+        return Carbon::parse($value)->diffForHumans();
+    }
 
 
     /**
