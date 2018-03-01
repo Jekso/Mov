@@ -16,8 +16,8 @@ class CreateGroupAdditionalInfosTable extends Migration
         Schema::create('group_additional_infos', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('group_id')->unsigned();
-            $table->string('university');
-            $table->string('faculty');
+            $table->integer('university_id')->unsigned();;
+            $table->integer('faculty_id')->unsigned();;
             $table->integer('grade');
             $table->integer('year');
             $table->timestamps();
@@ -25,6 +25,8 @@ class CreateGroupAdditionalInfosTable extends Migration
 
         Schema::table('group_additional_infos', function (Blueprint $table){
             $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
+            $table->foreign('university_id')->references('id')->on('universities')->onDelete('cascade');
+            $table->foreign('faculty_id')->references('id')->on('faculties')->onDelete('cascade');
         });
     }
 

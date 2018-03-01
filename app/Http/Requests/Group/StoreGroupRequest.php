@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests\Group;
 
+use App\Faculty;
+use App\University;
 use App\InterestTag;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -25,6 +27,8 @@ class StoreGroupRequest extends FormRequest
     public function rules()
     {
         $interest_tags = InterestTag::all()->implode('id', ',');
+        $universities = University::all()->implode('id', ',');
+        $faculties = Faculty::all()->implode('id', ',');
         return [
             'group_code'            => 'required_if:is_private,1|unique:groups|min:10|max:190',
             'name'                  => 'required|min:2|max:190',
@@ -32,6 +36,8 @@ class StoreGroupRequest extends FormRequest
             'tags.*'                => 'in:'.$interest_tags,
             'is_private'            => 'required|boolean',
             'type'                  => 'required|in:General,Specific',
+            'additional_info.faculty'       => 'in:'.$faculties,
+            'additional_info.university'    => 'in:'.$universities,
             'additional_info.grade' => 'integer',
             'additional_info.year'  => 'integer',
         ];

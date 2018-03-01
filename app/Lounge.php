@@ -17,20 +17,22 @@ class Lounge extends Model
     protected $touches = ['group'];
 
 	// lounge type Constants
-    const LOUNGE_WITH_NULL = 0;
+    const NO_IMG_NO_POLL = 0;
     const LOUNGE_WITH_IMG  = 1;
     const LOUNGE_WITH_POLL = 2;
 
     public function getTypeAttribute($value)
     {
-        if($value == 0)
+        if($value == self::NO_IMG_NO_POLL)
             $value = "NO_IMG_NO_POLL";
-        else if($value == 1)
+        else if($value == self::LOUNGE_WITH_IMG)
             $value = "LOUNGE_WITH_IMG";
-        else if($value == 2)
+        else if($value == self::LOUNGE_WITH_POLL)
             $value = "LOUNGE_WITH_POLL";
         return $value;
     }
+
+    
 
     public function getUpdatedAtAttribute($value)
     {

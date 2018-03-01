@@ -10,6 +10,7 @@
 */
 
 Route::get('helpers/get-tags', 'HelperController@get_tags');
+Route::get('helpers/get-uni-fac', 'HelperController@get_uni_fac');
 Route::get('register/get-roles', 'UserController@get_roles');
 
 /**

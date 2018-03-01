@@ -4,6 +4,7 @@ namespace App\Http\Responses\Group\Lounge;
 
 use App\User;
 use App\Http\Responses\IResponsible;
+use App\Http\Responses\Group\HelperGroupResponse;
 
 /**
 * 
@@ -20,18 +21,53 @@ class GroupLoungesIndexResponse implements IResponsible
 	public function jsonize()
 	{
 		return [
-			'group' => 
-			[
-			    "group_code" 	=> $this->group_with_lounges->group_code,
-			    "name" 			=> $this->group_with_lounges->name,
-			    "img" 			=> $this->group_with_lounges->img,
-			    "desc" 			=> $this->group_with_lounges->desc,
-			    "is_private" 	=> $this->group_with_lounges->is_private,
-			    "type" 			=> $this->group_with_lounges->type,
-			    "created_at" 	=> $this->group_with_lounges->created_at->format('Y-m-d H:i:s'),
-			    "updated_at" 	=> $this->group_with_lounges->updated_at
-			],
-			'lounges' => $this->group_with_lounges['lounges']
+			'group' => HelperGroupResponse::render_group($this->group_with_lounges),
+			'lounges' => $this->render_lounges($this->group_with_lounges->lounges)
 		];
+	}
+
+
+	private function render_lounges($lounges)
+	{
+		$all = [];
+		foreach ($lounges as $lounge)
+		{
+			$all[] = [
+				'id' 			=> $lounge->id,
+                'caption' 		=> $lounge->caption,
+                'type' 			=> $lounge->type,
+                'created_at' 	=> HelperGroupResponse::render_date($lounge->created_at),
+                'updated_at' 	=> $lounge->updated_at,
+                'user'			=> HelperGroupResponse::render_user($lounge->user),
+                'images' 		=> $lounge->images->pluck('img'),
+                'poll_options'	=> $this->render_poll_option($lounge->poll_options)
+			];
+		}
+		return $all;
+	}
+
+
+	private function render_poll_option($polls)
+	{
+		$all = [];
+		foreach ($polls as $poll)
+		{
+			$all[] = [
+				'id'			=> $poll->id,
+				'option' 		=> $poll->option,
+				'users_count'	=> $poll->users->count(),
+				'users'			=> $this->render_poll_users($poll->users)
+			];
+		}
+		return $all;
+	}
+
+
+	private function render_poll_users($users)
+	{
+		$all = [];
+		foreach ($users as $user)
+			$all[] = HelperGroupResponse::render_user($user);
+		return $all;
 	}
 }
