@@ -32,13 +32,17 @@ class LoungeController extends Controller
         return 'lounge store' ;
     }
 
-    public function update(Request $request, Group $group)
+    public function update(Request $request, Group $group, Lounge $lounge)
     {
+        $this->authorize('view', $group);
+        $this->authorize('update', $lounge);
         return 'lounge update' ;
     }
 
-    public function delete(Request $request, Group $group)
+    public function delete(Request $request, Group $group, Lounge $lounge)
     {
+        $this->authorize('view', $group);
+        $this->authorize('delete', $lounge);
         return 'lounge delete' ;
     }
 

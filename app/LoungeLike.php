@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Model;
 class LoungeLike extends Model
 {
     
+    protected $hidden = ['lounge_id', 'user_id'];
+    
     /**
     * --------- Realationship functions ---------
     */

@@ -5,6 +5,7 @@ namespace App\Http\Responses\Group\Lounge;
 use App\User;
 use App\Http\Responses\IResponsible;
 use App\Http\Responses\Group\HelperGroupResponse;
+use App\Http\Responses\Group\Lounge\HelperGroupLoungeResponse;
 
 /**
 * 
@@ -21,8 +22,8 @@ class GroupLoungesIndexResponse implements IResponsible
 	public function jsonize()
 	{
 		return [
-			'group' => HelperGroupResponse::render_group($this->group_with_lounges),
-			'lounges' => $this->render_lounges($this->group_with_lounges->lounges)
+			'group' 	=> HelperGroupResponse::render_group($this->group_with_lounges),
+			'lounges' 	=> $this->render_lounges($this->group_with_lounges->lounges)
 		];
 	}
 
@@ -31,43 +32,9 @@ class GroupLoungesIndexResponse implements IResponsible
 	{
 		$all = [];
 		foreach ($lounges as $lounge)
-		{
-			$all[] = [
-				'id' 			=> $lounge->id,
-                'caption' 		=> $lounge->caption,
-                'type' 			=> $lounge->type,
-                'created_at' 	=> HelperGroupResponse::render_date($lounge->created_at),
-                'updated_at' 	=> $lounge->updated_at,
-                'user'			=> HelperGroupResponse::render_user($lounge->user),
-                'images' 		=> $lounge->images->pluck('img'),
-                'poll_options'	=> $this->render_poll_option($lounge->poll_options)
-			];
-		}
+			$all[] = HelperGroupLoungeResponse::render_lounge($lounge);
 		return $all;
 	}
 
 
-	private function render_poll_option($polls)
-	{
-		$all = [];
-		foreach ($polls as $poll)
-		{
-			$all[] = [
-				'id'			=> $poll->id,
-				'option' 		=> $poll->option,
-				'users_count'	=> $poll->users->count(),
-				'users'			=> $this->render_poll_users($poll->users)
-			];
-		}
-		return $all;
-	}
-
-
-	private function render_poll_users($users)
-	{
-		$all = [];
-		foreach ($users as $user)
-			$all[] = HelperGroupResponse::render_user($user);
-		return $all;
-	}
 }

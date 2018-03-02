@@ -4,10 +4,21 @@ namespace App;
 
 use App\Data;
 use App\Group;
+use App\Lounge;
+use App\DataLike;
 use App\Question;
 use App\UserRole;
+use App\Assignment;
+use App\LoungeLike;
+use App\DataComment;
 use App\InterestTag;
+use App\QuestionLike;
+use App\LoungeComment;
+use App\AssignmentLike;
+use App\QuestionComment;
+use App\AssignmentComment;
 use App\Http\Traits\Helpers;
+use App\Http\Traits\Ownership;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -16,7 +27,7 @@ class User extends Authenticatable
 {
     use Notifiable;
     use Helpers;
-
+    use Ownership;
 
     // Default Model Params
     protected $fillable = ['username', 'email', 'password', 'birth_date', 'gender', 'bio'];
@@ -67,21 +78,6 @@ class User extends Authenticatable
     }
 
 
-    public function is_joined($group)
-    {       
-        return ($this->groups()->where('group_id', $group->id)->count() > 0);
-    }
-
-
-    public function is_creator($group)
-    {
-        $group = $this->groups()->where('group_id', $group->id)->first();
-        if($group)
-            return ($group->pivot->role === self::GROUP_CREATOR);
-        return false;
-    }
-
-
 
 
     /**
@@ -111,5 +107,66 @@ class User extends Authenticatable
     public function marked_questions()
     {
         return $this->belongsToMany(Question::class);
+    }
+
+
+    public function lounges()
+    {
+        return $this->hasMany(Lounge::class);
+    }
+
+    public function data()
+    {
+        return $this->hasMany(Data::class);
+    }
+
+    public function questions()
+    {
+        return $this->hasMany(Question::class);
+    }
+
+    public function assignments()
+    {
+        return $this->hasMany(Assignment::class);
+    }
+
+    public function lounge_comments()
+    {
+        return $this->hasMany(LoungeComment::class);
+    }
+
+    public function data_comments()
+    {
+        return $this->hasMany(DataComment::class);
+    }
+
+    public function question_comments()
+    {
+        return $this->hasMany(QuestionComment::class);
+    }
+
+    public function assignment_comments()
+    {
+        return $this->hasMany(AssignmentComment::class);
+    }
+
+    public function lounge_likes()
+    {
+        return $this->hasMany(LoungeLike::class);
+    }
+
+    public function data_likes()
+    {
+        return $this->hasMany(DataLike::class);
+    }
+
+    public function question_likes()
+    {
+        return $this->hasMany(QuestionLike::class);
+    }
+
+    public function assignment_likes()
+    {
+        return $this->hasMany(AssignmentLike::class);
     }
 }

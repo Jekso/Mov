@@ -2,6 +2,8 @@
 
 namespace App\Http\Responses\Group;
 
+use App\Http\Responses\Group\HelperGroupResponse;
+
 
 /**
 * 
@@ -43,4 +45,34 @@ class HelperGroupResponse
 	{
 		return $date->format('Y-m-d H:i:s');
 	}
+
+
+	public static function render_comments($comments)
+	{
+		$all = [];
+		foreach ($comments as $comment)
+		{
+			$all[] = [
+				'id' 			=> $comment->id,
+                'comment' 		=> $comment->comment,
+                'created_at' 	=> HelperGroupResponse::render_date($comment->created_at),
+                'updated_at' 	=> $comment->updated_at,
+                'user' 			=> HelperGroupResponse::render_user($comment->user)
+			];
+		}
+		return $all;
+	}
+
+
+	public static function render_likes($likes)
+	{
+		$all = [];
+		foreach ($likes as $like)
+			$all[] = HelperGroupResponse::render_user($like->user) ;
+		return [
+				'count'		=> $likes->count(),
+				'users'		=> $all
+			];
+	}
+
 }
