@@ -10,7 +10,19 @@ class GroupLoungePolicy
 {
     use HandlesAuthorization;
 
-    
+    /**
+     * Determine whether the user can view the lounge.
+     *
+     * @param  \App\User  $user
+     * @param  \App\Lounge  $lounge
+     * @return mixed
+     */
+    public function view(User $user, Lounge $lounge)
+    {
+        return $user->is_lounge_owner($lounge);
+    }
+
+
     /**
      * Determine whether the user can update the lounge.
      *

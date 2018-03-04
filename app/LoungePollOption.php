@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class LoungePollOption extends Model
 {
+
+    protected $fillable = ['option'];
+
     
     /**
     * --------- Realationship functions ---------

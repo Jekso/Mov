@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class LoungeLike extends Model
 {
-    
+    protected $fillable = ['user_id'];
     protected $hidden = ['lounge_id', 'user_id'];
     
     /**

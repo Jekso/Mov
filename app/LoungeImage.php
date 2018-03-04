@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class LoungeImage extends Model
 {
 
+    protected $fillable = ['img'];
 
 	public function getImgAttribute($value)
     {

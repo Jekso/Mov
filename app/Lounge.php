@@ -9,10 +9,13 @@ use App\LoungeLike;
 use App\LoungeImage;
 use App\LoungeComment;
 use App\LoungePollOption;
+use App\Http\Traits\Helpers;
 use Illuminate\Database\Eloquent\Model;
 
 class Lounge extends Model
 {
+    use Helpers;
+
     protected $hidden = ['user_id', 'group_id'];
     protected $touches = ['group'];
 
@@ -38,6 +41,36 @@ class Lounge extends Model
     {
         return Carbon::parse($value)->diffForHumans();
     }
+
+
+    /**
+    * --------- Helpers functions ---------
+    */
+
+    public function save_basic_data($request)
+    {
+        $this->caption = $request->caption;
+        $this->user_id = $request->user()->id;
+        $this->type = $request->type;
+    }
+
+
+    public function save_lounge_images($images)
+    {
+        foreach ($images as $image)
+        {
+            $image_name = $this->generate_and_store_img($image, 'lounges_images');
+            $this->images()->save(new LoungeImage(['img' => $image_name]));
+        }
+    }
+
+
+    public function save_lounge_poll_options($options)
+    {
+        foreach ($options as $option)
+            $this->poll_options()->save(new LoungePollOption(['option' => $option]));
+    }
+
 
 
     /**

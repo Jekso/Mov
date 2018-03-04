@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class LoungeComment extends Model
 {
+    protected $fillable = ['user_id', 'comment'];
     protected $hidden = ['lounge_id', 'user_id'];
 
     public function getUpdatedAtAttribute($value)

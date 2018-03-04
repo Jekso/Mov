@@ -73,16 +73,12 @@ Route::group(['namespace' => 'Group',  'middleware' => 'auth:api', 'prefix' => '
 			Route::put('{lounge}', 'LoungeController@update');
 			Route::delete('{lounge}', 'LoungeController@delete');
 			Route::group(['prefix' => '{lounge}'], function () {
+				Route::post('likes', 'LoungeLikeController@toggle_like');
+				Route::post('options/{option}', 'LoungePollController@choose_option');
 				Route::group(['prefix' => 'comments'], function () {
 					Route::post('/', 'LoungeCommentController@store');
 					Route::put('{comment}', 'LoungeCommentController@update');
 					Route::delete('{comment}', 'LoungeCommentController@delete');
-				});
-				Route::group(['prefix' => 'likes'], function () {
-					Route::post('/', 'LoungeLikeController@toggle_like');
-				});
-				Route::group(['prefix' => 'polls'], function () {
-					Route::post('/', 'LoungePollController@choose_option');
 				});
 			});
 		});
@@ -104,16 +100,12 @@ Route::group(['namespace' => 'Group',  'middleware' => 'auth:api', 'prefix' => '
 			Route::put('{data}', 'DataController@update');
 			Route::delete('{data}', 'DataController@delete');
 			Route::group(['prefix' => '{data}'], function () {
+				Route::post('likes', 'DataLikeController@toggle_like');
+				Route::post('saved', 'DataSavedController@save_data');
 				Route::group(['prefix' => 'comments'], function () {
 					Route::post('/', 'DataCommentController@store');
 					Route::put('{comment}', 'DataCommentController@update');
 					Route::delete('{comment}', 'DataCommentController@delete');
-				});
-				Route::group(['prefix' => 'likes'], function () {
-					Route::post('/', 'DataLikeController@toggle_like');
-				});
-				Route::group(['prefix' => 'saved'], function () {
-					Route::post('/', 'DataSavedController@save_data');
 				});
 			});
 		});
@@ -135,13 +127,11 @@ Route::group(['namespace' => 'Group',  'middleware' => 'auth:api', 'prefix' => '
 			Route::put('{assignment}', 'AssignmentController@update');
 			Route::delete('{assignment}', 'AssignmentController@delete');
 			Route::group(['prefix' => '{assignment}'], function () {
+				Route::post('likes', 'AssignmentLikeController@toggle_like');
 				Route::group(['prefix' => 'comments'], function () {
 					Route::post('/', 'AssignmentCommentController@store');
 					Route::put('{comment}', 'AssignmentCommentController@update');
 					Route::delete('{comment}', 'AssignmentCommentController@delete');
-				});
-				Route::group(['prefix' => 'likes'], function () {
-					Route::post('/', 'AssignmentLikeController@toggle_like');
 				});
 			});
 		});
@@ -163,16 +153,12 @@ Route::group(['namespace' => 'Group',  'middleware' => 'auth:api', 'prefix' => '
 			Route::put('{question}', 'QuestionController@update');
 			Route::delete('{question}', 'QuestionController@delete');
 			Route::group(['prefix' => '{question}'], function () {
+				Route::post('likes', 'QuestionLikeController@toggle_like');
+				Route::post('saved', 'QuestionSavedController@save_question');
 				Route::group(['prefix' => 'comments'], function () {
 					Route::post('/', 'QuestionCommentController@store');
 					Route::put('{comment}', 'QuestionCommentController@update');
 					Route::delete('{comment}', 'QuestionCommentController@delete');
-				});
-				Route::group(['prefix' => 'likes'], function () {
-					Route::post('/', 'QuestionLikeController@toggle_like');
-				});
-				Route::group(['prefix' => 'saved'], function () {
-					Route::post('/', 'QuestionSavedController@save_question');
 				});
 				Route::group(['prefix' => 'answers', 'namespace' => 'Answer'], function () {
 					Route::get('/', 'AnswerController@index');
