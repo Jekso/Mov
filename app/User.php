@@ -5,18 +5,10 @@ namespace App;
 use App\Data;
 use App\Group;
 use App\Lounge;
-use App\DataLike;
 use App\Question;
 use App\UserRole;
 use App\Assignment;
-use App\LoungeLike;
-use App\DataComment;
 use App\InterestTag;
-use App\QuestionLike;
-use App\LoungeComment;
-use App\AssignmentLike;
-use App\QuestionComment;
-use App\AssignmentComment;
 use App\Http\Traits\Helpers;
 use App\Http\Traits\Ownership;
 use Illuminate\Support\Facades\Storage;
@@ -130,43 +122,4 @@ class User extends Authenticatable
         return $this->hasMany(Assignment::class);
     }
 
-    public function lounge_comments()
-    {
-        return $this->hasMany(LoungeComment::class);
-    }
-
-    public function data_comments()
-    {
-        return $this->hasMany(DataComment::class);
-    }
-
-    public function question_comments()
-    {
-        return $this->hasMany(QuestionComment::class);
-    }
-
-    public function assignment_comments()
-    {
-        return $this->hasMany(AssignmentComment::class);
-    }
-
-    public function lounge_likes()
-    {
-        return $this->hasMany(LoungeLike::class);
-    }
-
-    public function data_likes()
-    {
-        return $this->hasMany(DataLike::class);
-    }
-
-    public function question_likes()
-    {
-        return $this->hasMany(QuestionLike::class);
-    }
-
-    public function assignment_likes()
-    {
-        return $this->hasMany(AssignmentLike::class);
-    }
 }

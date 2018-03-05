@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class GroupAdditionalInfo extends Model
 {
-	protected $fillable = ['university', 'faculty', 'grade', 'year'];
+	protected $fillable = ['university_id', 'faculty_id', 'grade', 'year'];
 	protected $hidden = ['id', 'group_id', 'faculty_id', 'university_id', 'created_at', 'updated_at'];
 	protected $touches = ['group'];
 

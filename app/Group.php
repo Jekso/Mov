@@ -120,8 +120,8 @@ class Group extends Model
     public function save_additional_info($request)  
     {
         $this->additional_info()->create([
-            'university'    => $request->input('additional_info.university'),
-            'faculty'       => $request->input('additional_info.faculty'),
+            'university_id'    => $request->input('additional_info.university'),
+            'faculty_id'       => $request->input('additional_info.faculty'),
             'grade'         => $request->input('additional_info.grade'),
             'year'          => $request->input('additional_info.year')
         ]);
@@ -130,8 +130,8 @@ class Group extends Model
     public function update_additional_info($request)  
     {
         $this->additional_info()->update([
-            'university'    => $request->input('additional_info.university'),
-            'faculty'       => $request->input('additional_info.faculty'),
+            'university_id'    => $request->input('additional_info.university'),
+            'faculty_id'       => $request->input('additional_info.faculty'),
             'grade'         => $request->input('additional_info.grade'),
             'year'          => $request->input('additional_info.year')
         ]);

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Policies;
+namespace App\Policies\Data;
 
 use App\User;
 use App\Data;

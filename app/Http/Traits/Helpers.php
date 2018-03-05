@@ -15,4 +15,5 @@ trait Helpers
         Storage::disk($driver)->put($image_name, $image);
         return $image_name;
     }
+
 }

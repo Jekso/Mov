@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Group\Lounge;
 use App\Group;
 use App\Lounge;
 use Illuminate\Http\Request;
+use App\Http\Helpers\Authorization;
 use App\Http\Controllers\Controller;
 use App\Http\Responses\DefaultSuccessResponse;
 use App\Http\Requests\Group\Lounge\StoreLoungeRequest;
@@ -18,8 +19,12 @@ class LoungeController extends Controller
     
     public function index(Group $group)
     {
+        // authorize if user is joined the group
         $this->authorize('view', $group);
+
+        // get the group's basic_data, add_info, lounges with thier users & images and poll_options with thier users
         $group_with_lounges = $group->load('additional_info.faculty', 'additional_info.university', 'lounges.user', 'lounges.images', 'lounges.poll_options.users');
+
         return $this->success_response(new GroupLoungesIndexResponse($group_with_lounges));
     }
 
@@ -28,9 +33,15 @@ class LoungeController extends Controller
 
     public function show(Group $group, Lounge $lounge)
     {
-        // TODO: authorize lounge belongs to group that user can join
+        // authorize if the lounge belongs to the group
+        Authorization::authorize_group_element($group, $lounge);
+
+        // authorize if user is joined the group
         $this->authorize('view', $group);
+
+        // get lounge with its user, images, polls with thire users, comments & likes with thiir users
         $lounge = $lounge->load('user', 'images', 'poll_options.users', 'comments.user', 'likes.user');
+
         return $this->success_response(new GroupLoungesShowResponse($lounge));
     }
 
@@ -40,7 +51,7 @@ class LoungeController extends Controller
     public function store(StoreLoungeRequest $request, Group $group)
     {
 
-        // authorize is user joined group or not
+        // authorize if user is joined the group
         $this->authorize('view', $group);
 
 
@@ -77,8 +88,15 @@ class LoungeController extends Controller
 
     public function update(Request $request, Group $group, Lounge $lounge)
     {
+        // authorize if the lounge belongs to the group
+        Authorization::authorize_group_element($group, $lounge);
+
+        // authorize if user is joined the group
         $this->authorize('view', $group);
+
+        // authorize if user can update the lounge
         $this->authorize('update', $lounge);
+
         return 'lounge update' ;
     }
 
@@ -87,9 +105,17 @@ class LoungeController extends Controller
 
     public function delete(Request $request, Group $group, Lounge $lounge)
     {
+        // authorize if the lounge belongs to the group
+        Authorization::authorize_group_element($group, $lounge);
+
+        // authorize if user is joined the group
         $this->authorize('view', $group);
+
+        // authorize if user can delete the lounge
         $this->authorize('delete', $lounge);
+
         $lounge->delete();
+        
         return $this->success_response(new DefaultSuccessResponse());
     }
 

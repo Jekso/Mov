@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Policies;
+namespace App\Policies\Assignment;
 
 use App\User;
 use App\Assignment;

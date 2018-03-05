@@ -21,7 +21,9 @@ class GroupController extends Controller
 
     public function index(Request $request)
     {
+        // get all user's joined groups
         $groups = $request->user()->groups()->withCount('users')->orderBy('updated_at', 'DESC')->get();
+
         return $this->success_response(new UserJoinedGroupsResponse($groups));
     }
 
@@ -29,9 +31,11 @@ class GroupController extends Controller
 
     public function discover(Request $request)
     {
+        // get Most Populer & May Like Groups
         $groups = Group::discover_groups();
         $most_populer_groups = $groups['most_populer'];
         $may_like_groups = $groups['may_like'];
+
         return $this->success_response(new UserDiscoverGroupsResponse($most_populer_groups, $may_like_groups));
     }
 
@@ -45,6 +49,7 @@ class GroupController extends Controller
 
         // join user to the group
         $request->user()->groups()->attach($group->id);
+
         return $this->success_response(new DefaultSuccessResponse());
     }
 
@@ -52,12 +57,13 @@ class GroupController extends Controller
 
     public function leave(Request $request, Group $group)
     {
-        // check if user is already joined the group
+        // check if user not joined the group
         if(!$request->user()->is_joined($group))
             return $this->error_response(Errors::USER_NOT_JOINED);
 
-        // join user to the group
+        // remove user from the group
         $request->user()->groups()->detach($group->id);
+
         return $this->success_response(new DefaultSuccessResponse());
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Policies;
+namespace App\Policies\Lounge;
 
 use App\User;
 use App\Lounge;
@@ -9,18 +9,6 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 class GroupLoungePolicy
 {
     use HandlesAuthorization;
-
-    /**
-     * Determine whether the user can view the lounge.
-     *
-     * @param  \App\User  $user
-     * @param  \App\Lounge  $lounge
-     * @return mixed
-     */
-    public function view(User $user, Lounge $lounge)
-    {
-        return $user->is_lounge_owner($lounge);
-    }
 
 
     /**
@@ -32,7 +20,7 @@ class GroupLoungePolicy
      */
     public function update(User $user, Lounge $lounge)
     {
-        return $user->is_lounge_owner($lounge);
+        return $user->is_owner($lounge);
     }
 
     /**
@@ -44,6 +32,6 @@ class GroupLoungePolicy
      */
     public function delete(User $user, Lounge $lounge)
     {
-        return $user->is_lounge_owner($lounge);
+        return $user->is_owner($lounge);
     }
 }
