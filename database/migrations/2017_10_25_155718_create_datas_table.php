@@ -18,7 +18,6 @@ class CreateDatasTable extends Migration
             $table->integer('group_id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->string('caption');
-            $table->text('desc');
             $table->integer('type')->default(0);
             $table->timestamps();
         });

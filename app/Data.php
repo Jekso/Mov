@@ -8,12 +8,14 @@ use App\DataLike;
 use App\DataLink;
 use App\DataImage;
 use App\DataVoice;
+use Carbon\Carbon;
 use App\DataComment;
 use Illuminate\Database\Eloquent\Model;
 
 class Data extends Model
 {
 
+    protected $table = 'datas';
     protected $touches = ['group'];
 
 
@@ -21,6 +23,25 @@ class Data extends Model
     const DATA_WITH_LINK = 0;
     const DATA_WITH_IMG  = 1;
     const DATA_WITH_VOICE = 2;
+
+
+    public function getTypeAttribute($value)
+    {
+        if($value == self::DATA_WITH_LINK)
+            $value = "DATA_WITH_LINK";
+        else if($value == self::DATA_WITH_IMG)
+            $value = "DATA_WITH_IMG";
+        else if($value == self::DATA_WITH_VOICE)
+            $value = "DATA_WITH_VOICE";
+        return $value;
+    }
+
+    
+
+    public function getUpdatedAtAttribute($value)
+    {
+        return Carbon::parse($value)->diffForHumans();
+    }
 
 
     /**

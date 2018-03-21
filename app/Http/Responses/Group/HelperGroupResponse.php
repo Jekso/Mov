@@ -55,9 +55,9 @@ class HelperGroupResponse
 			$all[] = [
 				'id' 			=> $comment->id,
                 'comment' 		=> $comment->comment,
-                'created_at' 	=> HelperGroupResponse::render_date($comment->created_at),
+                'created_at' 	=> self::render_date($comment->created_at),
                 'updated_at' 	=> $comment->updated_at,
-                'user' 			=> HelperGroupResponse::render_user($comment->user)
+                'user' 			=> self::render_user($comment->user)
 			];
 		}
 		return $all;
@@ -68,7 +68,7 @@ class HelperGroupResponse
 	{
 		$all = [];
 		foreach ($likes as $like)
-			$all[] = HelperGroupResponse::render_user($like->user) ;
+			$all[] = self::render_user($like->user) ;
 		return [
 				'count'		=> $likes->count(),
 				'users'		=> $all

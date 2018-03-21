@@ -22,7 +22,7 @@ class LoungeController extends Controller
         // authorize if user is joined the group
         $this->authorize('view', $group);
 
-        // get the group's basic_data, add_info, lounges with thier users & images and poll_options with thier users
+        // get the group's basic_data, add_info, lounges with thier users & images and poll_options with their users
         $group_with_lounges = $group->load('additional_info.faculty', 'additional_info.university', 'lounges.user', 'lounges.images', 'lounges.poll_options.users');
 
         return $this->success_response(new GroupLoungesIndexResponse($group_with_lounges));
@@ -39,7 +39,7 @@ class LoungeController extends Controller
         // authorize if user is joined the group
         $this->authorize('view', $group);
 
-        // get lounge with its user, images, polls with thire users, comments & likes with thiir users
+        // get lounge with its user, images, polls with thire users, comments & likes with their users
         $lounge = $lounge->load('user', 'images', 'poll_options.users', 'comments.user', 'likes.user');
 
         return $this->success_response(new GroupLoungesShowResponse($lounge));
