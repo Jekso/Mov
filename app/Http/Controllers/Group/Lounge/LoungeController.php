@@ -11,6 +11,7 @@ use App\Http\Responses\DefaultSuccessResponse;
 use App\Http\Requests\Group\Lounge\StoreLoungeRequest;
 use App\Http\Responses\Group\Lounge\GroupLoungesShowResponse;
 use App\Http\Responses\Group\Lounge\GroupLoungesIndexResponse;
+use App\Http\Responses\Group\Lounge\GroupLoungesStoreResponse;
 
 class LoungeController extends Controller
 {
@@ -80,7 +81,9 @@ class LoungeController extends Controller
             $lounge->save_lounge_poll_options($request->poll_options);
 
 
-        return $this->success_response(new DefaultSuccessResponse());
+        $lounge = $lounge->load('user', 'images', 'poll_options.users');
+
+        return $this->success_response(new GroupLoungesStoreResponse($lounge));
     }
 
 

@@ -24,6 +24,7 @@ class HelperGroupDataResponse
                   'images' 		=> $data->images->pluck('img'),
                   'links' 		=> $data->links->pluck('link'),
                   'voice_notes' 	=> $data->voice_notes->pluck('voice'),
+                  'files'           => $data->files->pluck('file'),
 		];
 	}
 

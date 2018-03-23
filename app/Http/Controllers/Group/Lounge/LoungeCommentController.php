@@ -28,6 +28,9 @@ class LoungeCommentController extends Controller
         return $this->success_response(new DefaultSuccessResponse());
     }
 
+
+
+
     public function update(Request $request, Group $group, Lounge $lounge, LoungeComment $comment)
     {
         // authorize if comment belongs to lounge
@@ -44,6 +47,9 @@ class LoungeCommentController extends Controller
 
         return 'lounge comment update' ;
     }
+
+
+
 
     public function delete(Request $request, Group $group, Lounge $lounge, LoungeComment $comment)
     {

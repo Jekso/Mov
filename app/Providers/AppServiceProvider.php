@@ -21,6 +21,16 @@ class AppServiceProvider extends ServiceProvider
             $extension = explode(';', explode('/', $value)[1])[0];
             return in_array($extension, ['png', 'jpg', 'jpeg', 'gif']);
         });
+
+        Validator::extend('encoded_str_voicable', function ($attribute, $value, $parameters, $validator) {
+            $extension = explode(';', explode('/', $value)[1])[0];
+            return in_array($extension, ['mp3', 'wav']);
+        });
+
+        Validator::extend('encoded_str_filable', function ($attribute, $value, $parameters, $validator) {
+            $extension = explode(';', explode('/', $value)[1])[0];
+            return in_array($extension, ['pdf', 'txt', 'pptx', 'ppt']);
+        });
     }
 
     /**

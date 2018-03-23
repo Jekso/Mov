@@ -10,28 +10,6 @@ class DataCommentPolicy
 {
     use HandlesAuthorization;
 
-    /**
-     * Determine whether the user can view the dataComment.
-     *
-     * @param  \App\User  $user
-     * @param  \App\DataComment  $dataComment
-     * @return mixed
-     */
-    public function view(User $user, DataComment $dataComment)
-    {
-        //
-    }
-
-    /**
-     * Determine whether the user can create dataComments.
-     *
-     * @param  \App\User  $user
-     * @return mixed
-     */
-    public function create(User $user)
-    {
-        //
-    }
 
     /**
      * Determine whether the user can update the dataComment.
@@ -42,7 +20,7 @@ class DataCommentPolicy
      */
     public function update(User $user, DataComment $dataComment)
     {
-        //
+        return $user->is_owner($dataComment);
     }
 
     /**
@@ -54,6 +32,6 @@ class DataCommentPolicy
      */
     public function delete(User $user, DataComment $dataComment)
     {
-        //
+        return $user->is_owner($dataComment);
     }
 }

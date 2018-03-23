@@ -97,6 +97,12 @@ return [
             'visibility' => 'public',
         ],
 
+        'data_files' => [
+            'driver' => 'local',
+            'root' => public_path('files/groups/data/files'),
+            'visibility' => 'public',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_KEY'),

@@ -24,7 +24,7 @@ class StoreLoungeRequest extends FormRequest
     public function rules()
     {
         return [
-            'caption'           => 'required_if:type,NO_IMG_NO_POLL|min:2|max:190',
+            'caption'           => 'required|min:2|max:190',
             'type'              => 'required|in:NO_IMG_NO_POLL,LOUNGE_WITH_IMG,LOUNGE_WITH_POLL',
             'images.*'          => 'encoded_str_imagable',
             'poll_options.*'    => 'min:2|max:190',

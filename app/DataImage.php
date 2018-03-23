@@ -9,6 +9,13 @@ use Illuminate\Database\Eloquent\Model;
 class DataImage extends Model
 {
 
+    protected $fillable = ['img'];
+
+    public function getImgAttribute($value)
+    {
+        return asset('files/groups/data/images/'.$value);
+    }
+
     
     /**
     * --------- Realationship functions ---------

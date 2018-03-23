@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Model;
 class DataComment extends Model
 {
 
+    protected $fillable = ['user_id', 'comment'];
+    protected $hidden = ['data_id', 'user_id'];
 
     public function getUpdatedAtAttribute($value)
     {

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class DataLink extends Model
 {
+    protected $fillable = ['link'];
 
     /**
     * --------- Realationship functions ---------

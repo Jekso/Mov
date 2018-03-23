@@ -9,6 +9,10 @@ use Illuminate\Database\Eloquent\Model;
 class DataLike extends Model
 {
 
+    protected $fillable = ['user_id'];
+    protected $hidden = ['data_id', 'user_id'];
+
+
     /**
     * --------- Realationship functions ---------
     */

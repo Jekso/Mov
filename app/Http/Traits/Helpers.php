@@ -16,4 +16,14 @@ trait Helpers
         return $image_name;
     }
 
+
+    public function generate_and_store_file($encoded_file_str, $driver)
+    {
+        $extension = explode(';', explode('/', $encoded_file_str)[1])[0];
+        $file_name = str_random(40).'.'.$extension;
+        $file = base64_decode(substr($encoded_file_str, strpos($encoded_file_str, ",")+1));
+        Storage::disk($driver)->put($file_name, $file);
+        return $file_name;
+    }
+
 }

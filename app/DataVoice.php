@@ -8,7 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class DataVoice extends Model
 {
+    protected $fillable = ['voice'];
     
+    public function getVoiceAttribute($value)
+    {
+        return asset('files/groups/data/audio/'.$value);
+    }
+
     /**
     * --------- Realationship functions ---------
     */
