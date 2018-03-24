@@ -91,12 +91,12 @@ class User extends Authenticatable
         return $this->belongsToMany(InterestTag::class);
     }
 
-    public function marked_data()
+    public function saved_data()
     {
         return $this->belongsToMany(Data::class);
     }
 
-    public function marked_questions()
+    public function saved_questions()
     {
         return $this->belongsToMany(Question::class);
     }

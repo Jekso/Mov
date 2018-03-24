@@ -96,12 +96,13 @@ Route::group(['namespace' => 'Group',  'middleware' => 'auth:api', 'prefix' => '
 		Route::group(['prefix' => 'data', 'namespace' => 'Data'], function () {
 			Route::get('/', 'DataController@index');
 			Route::post('/', 'DataController@store');
+			Route::get('saved', 'DataSavedController@get_saved_data');
 			Route::get('{data}', 'DataController@show');
 			Route::put('{data}', 'DataController@update');
 			Route::delete('{data}', 'DataController@delete');
 			Route::group(['prefix' => '{data}'], function () {
+				Route::post('toggle-save', 'DataSavedController@toggle_save_data');	
 				Route::post('likes', 'DataLikeController@toggle_like');
-				Route::post('saved', 'DataSavedController@save_data');
 				Route::group(['prefix' => 'comments'], function () {
 					Route::post('/', 'DataCommentController@store');
 					Route::put('{comment}', 'DataCommentController@update');

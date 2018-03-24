@@ -137,6 +137,11 @@ class Group extends Model
         ]);
     }
 
+    public function get_saved_data($user)
+    {
+        return $this->saved_data()->wherePivot('user_id', $user->id)->with('user', 'images', 'links', 'voice_notes', 'files')->get();
+    }
+
 
     /**
     * --------- Realationship functions ---------
@@ -166,6 +171,11 @@ class Group extends Model
     public function data()
     {
     	return $this->hasMany(Data::class);
+    }
+
+    public function saved_data()
+    {
+        return $this->belongsToMany(Data::class, 'data_user');
     }
 
     public function questions()

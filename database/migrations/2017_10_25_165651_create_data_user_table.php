@@ -16,6 +16,7 @@ class CreateDataUserTable extends Migration
         Schema::create('data_user', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('data_id')->unsigned();
+            $table->integer('group_id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->timestamps();
         });
@@ -23,6 +24,7 @@ class CreateDataUserTable extends Migration
         Schema::table('data_user', function (Blueprint $table){
             $table->foreign('data_id')->references('id')->on('datas')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
         });
     }
 
