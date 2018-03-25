@@ -14,6 +14,6 @@ class DataVoiceContent extends Model
 
     public function voice()
     {
-    	return $this->belongsTo(DataVoice::class);
+    	return $this->belongsTo(DataVoice::class, 'data_voice_id');
     }
 }

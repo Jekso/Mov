@@ -14,6 +14,6 @@ class DataImageContent extends Model
 
     public function image()
     {
-    	return $this->belongsTo(DataImage::class);
+    	return $this->belongsTo(DataImage::class, 'data_image_id');
     }
 }

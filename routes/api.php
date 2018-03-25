@@ -97,6 +97,8 @@ Route::group(['namespace' => 'Group',  'middleware' => 'auth:api', 'prefix' => '
 			Route::get('/', 'DataController@index');
 			Route::post('/', 'DataController@store');
 			Route::get('saved', 'DataSavedController@get_saved_data');
+			Route::post('search', 'DataSearchController@normal_search');
+			Route::post('search-in-depth', 'DataSearchController@search_in_depth');
 			Route::get('{data}', 'DataController@show');
 			Route::put('{data}', 'DataController@update');
 			Route::delete('{data}', 'DataController@delete');

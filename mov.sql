@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 05, 2018 at 10:52 PM
+-- Generation Time: Mar 25, 2018 at 06:34 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.20
 
@@ -123,11 +123,22 @@ CREATE TABLE `datas` (
   `group_id` int(10) UNSIGNED NOT NULL,
   `user_id` int(10) UNSIGNED NOT NULL,
   `caption` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `desc` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `type` int(11) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `datas`
+--
+
+INSERT INTO `datas` (`id`, `group_id`, `user_id`, `caption`, `type`, `created_at`, `updated_at`) VALUES
+(1, 7, 2, 'hhhhhhhhhhhhhhh', 0, '2018-03-21 01:00:00', '2018-03-21 01:00:00'),
+(2, 7, 1, 'tttttttttttttt', 1, '2018-03-21 01:00:00', '2018-03-21 01:00:00'),
+(3, 7, 1, 'tttttttttttttt', 2, '2018-03-21 01:00:00', '2018-03-21 01:00:00'),
+(5, 7, 2, 'test1', 0, '2018-03-23 14:05:46', '2018-03-23 14:05:46'),
+(6, 7, 2, 'test2', 1, '2018-03-23 14:10:03', '2018-03-23 14:10:03'),
+(7, 7, 2, 'test3', 2, '2018-03-23 14:10:43', '2018-03-23 14:10:43');
 
 -- --------------------------------------------------------
 
@@ -140,6 +151,29 @@ CREATE TABLE `data_comments` (
   `data_id` int(10) UNSIGNED NOT NULL,
   `user_id` int(10) UNSIGNED NOT NULL,
   `comment` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `data_comments`
+--
+
+INSERT INTO `data_comments` (`id`, `data_id`, `user_id`, `comment`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 'ssssssssss', '2018-03-21 01:00:00', '2018-03-21 01:00:00'),
+(2, 1, 2, 'ddddddddddddddddddddddd', '2018-03-21 01:00:00', '2018-03-21 01:00:00'),
+(3, 2, 1, 'xxxxxxxxxxxxxxxx', '2018-03-21 01:00:00', '2018-03-21 01:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_files`
+--
+
+CREATE TABLE `data_files` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `data_id` int(10) UNSIGNED NOT NULL,
+  `file` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -158,6 +192,16 @@ CREATE TABLE `data_images` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `data_images`
+--
+
+INSERT INTO `data_images` (`id`, `data_id`, `img`, `created_at`, `updated_at`) VALUES
+(1, 2, '1.jpg', '2018-03-23 14:10:04', '2018-03-23 14:10:04'),
+(2, 2, '2.jpg', '2018-03-23 14:10:04', '2018-03-23 14:10:04'),
+(3, 6, 'rCrnssLNnl29OFC7H304X92zRG4ebUx4OEmti6pG.jpg', '2018-03-23 14:10:04', '2018-03-23 14:10:04'),
+(4, 6, 'iUS4b9O8AgPw1NvyNYCJRAnUX2D8GYoxtbv5Di6i.jpg', '2018-03-23 14:10:04', '2018-03-23 14:10:04');
+
 -- --------------------------------------------------------
 
 --
@@ -166,6 +210,7 @@ CREATE TABLE `data_images` (
 
 CREATE TABLE `data_image_contents` (
   `id` int(10) UNSIGNED NOT NULL,
+  `group_id` int(10) UNSIGNED NOT NULL,
   `data_image_id` int(10) UNSIGNED NOT NULL,
   `keyword` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `vertices_1_x` int(11) NOT NULL,
@@ -179,6 +224,15 @@ CREATE TABLE `data_image_contents` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `data_image_contents`
+--
+
+INSERT INTO `data_image_contents` (`id`, `group_id`, `data_image_id`, `keyword`, `vertices_1_x`, `vertices_1_y`, `vertices_2_x`, `vertices_2_y`, `vertices_3_x`, `vertices_3_y`, `vertices_4_x`, `vertices_4_y`, `created_at`, `updated_at`) VALUES
+(1, 7, 1, 'hello', 10, 30, 10, 30, 10, 30, 10, 30, NULL, NULL),
+(2, 7, 2, 'os', 10, 30, 10, 30, 10, 30, 10, 30, NULL, NULL),
+(3, 7, 4, 'os', 10, 30, 10, 30, 10, 30, 10, 30, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -194,6 +248,16 @@ CREATE TABLE `data_likes` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `data_likes`
+--
+
+INSERT INTO `data_likes` (`id`, `data_id`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, NULL, NULL),
+(2, 1, 2, NULL, NULL),
+(3, 2, 1, NULL, NULL),
+(6, 7, 2, '2018-03-24 09:56:47', '2018-03-24 09:56:47');
+
 -- --------------------------------------------------------
 
 --
@@ -208,6 +272,16 @@ CREATE TABLE `data_links` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `data_links`
+--
+
+INSERT INTO `data_links` (`id`, `data_id`, `link`, `created_at`, `updated_at`) VALUES
+(1, 1, 'https://mail.google.com/mail/u/0/', NULL, NULL),
+(2, 1, 'https://facebook.com', NULL, NULL),
+(3, 5, 'https://www.youtube.com/watch?v=L2QTtdeL3dE', '2018-03-23 14:05:46', '2018-03-23 14:05:46'),
+(4, 5, 'https://www.youtube.com/watch?v=L2QTtdeL3dE', '2018-03-23 14:05:46', '2018-03-23 14:05:46');
+
 -- --------------------------------------------------------
 
 --
@@ -217,10 +291,19 @@ CREATE TABLE `data_links` (
 CREATE TABLE `data_user` (
   `id` int(10) UNSIGNED NOT NULL,
   `data_id` int(10) UNSIGNED NOT NULL,
+  `group_id` int(10) UNSIGNED NOT NULL,
   `user_id` int(10) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `data_user`
+--
+
+INSERT INTO `data_user` (`id`, `data_id`, `group_id`, `user_id`, `created_at`, `updated_at`) VALUES
+(5, 7, 7, 2, NULL, NULL),
+(6, 1, 7, 2, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -236,6 +319,16 @@ CREATE TABLE `data_voices` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `data_voices`
+--
+
+INSERT INTO `data_voices` (`id`, `data_id`, `voice`, `created_at`, `updated_at`) VALUES
+(1, 3, 'test.mp3', '2018-03-21 23:00:00', '2018-03-21 23:00:00'),
+(2, 3, 'tw.wav', '2018-03-21 23:00:00', '2018-03-21 23:00:00'),
+(3, 7, '8X9jwNpOUCVEnLwWj1VXyRqXlbA6mviXvX149TYx.mp3', '2018-03-23 14:10:43', '2018-03-23 14:10:43'),
+(4, 7, 'E8AWUA5fc16XUB9o6VnR7T7An3A6KvYhGu4lNNVt.wav', '2018-03-23 14:10:44', '2018-03-23 14:10:44');
+
 -- --------------------------------------------------------
 
 --
@@ -245,12 +338,22 @@ CREATE TABLE `data_voices` (
 CREATE TABLE `data_voice_contents` (
   `id` int(10) UNSIGNED NOT NULL,
   `data_voice_id` int(10) UNSIGNED NOT NULL,
+  `group_id` int(10) UNSIGNED NOT NULL,
   `keyword` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `start_time` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `end_time` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `data_voice_contents`
+--
+
+INSERT INTO `data_voice_contents` (`id`, `data_voice_id`, `group_id`, `keyword`, `start_time`, `end_time`, `created_at`, `updated_at`) VALUES
+(1, 2, 7, 'os', '10', '20', NULL, NULL),
+(2, 4, 7, 'hello', '10', '20', NULL, NULL),
+(3, 3, 7, 'os', '10', '20', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -297,7 +400,7 @@ CREATE TABLE `groups` (
 
 INSERT INTO `groups` (`id`, `group_code`, `name`, `img`, `desc`, `is_private`, `type`, `created_at`, `updated_at`) VALUES
 (6, 'sw group 2017', 'Database Group', 'DImbiYRciCCSnCmQ5nFgH3uMC4gm7l0sA4Q1ZQbZ.jpg', 'test test', 1, 1, '2017-11-27 19:43:43', '2017-11-28 13:23:08'),
-(7, 'os group 2017', 'Database Group', 'ZKLZW9uuCigc2cYgk7OEYrLO0uxJuOQj4Dl3gZgR.jpg', 'test test', 1, 1, '2018-02-28 15:46:55', '2018-03-05 16:44:58'),
+(7, 'os group 2017', 'Database Group', 'ZKLZW9uuCigc2cYgk7OEYrLO0uxJuOQj4Dl3gZgR.jpg', 'test test', 1, 1, '2018-02-28 15:46:55', '2018-03-23 15:20:34'),
 (10, 'os2 group 2017', 'Software Group', 'JklwwRTMywbySHFH9pY1rGON2cmOIFuqovbcxuQC.jpg', 'ugyjyguuhj', 1, 1, '2018-03-05 16:43:43', '2018-03-05 16:43:43');
 
 -- --------------------------------------------------------
@@ -452,7 +555,8 @@ INSERT INTO `lounges` (`id`, `group_id`, `user_id`, `caption`, `type`, `created_
 (4, 7, 2, 'test', 0, '2018-03-04 11:04:21', '2018-03-04 11:04:21'),
 (7, 7, 2, 'test', 2, '2018-03-04 11:09:16', '2018-03-04 11:09:16'),
 (8, 7, 2, 'test', 1, '2018-03-04 11:10:24', '2018-03-04 11:10:24'),
-(9, 7, 2, 'test2', 1, '2018-03-04 11:12:06', '2018-03-04 11:12:06');
+(9, 7, 2, 'test2', 1, '2018-03-04 11:12:06', '2018-03-04 11:12:06'),
+(10, 7, 2, 'test2', 1, '2018-03-23 15:20:34', '2018-03-23 15:20:34');
 
 -- --------------------------------------------------------
 
@@ -499,7 +603,9 @@ INSERT INTO `lounge_images` (`id`, `lounge_id`, `img`, `created_at`, `updated_at
 (3, 8, 'EULIQECdM0trSAZYMEF5aIhxA2CnTH6XTmDjdSDi.jpg', '2018-03-04 11:10:25', '2018-03-04 11:10:25'),
 (4, 8, 'PqIVScUR0xvJvHlIgj1vbASxJeGQsdaeMWrs1oFb.jpg', '2018-03-04 11:10:25', '2018-03-04 11:10:25'),
 (5, 9, 'WpOvJLsDEr1wJB6nu87BpIZV9UTsAXU5yiixs6Nj.jpg', '2018-03-04 11:12:06', '2018-03-04 11:12:06'),
-(6, 9, 'k2FKRQcgdWW6fwv14BUMX9mwLvXnsGqOynlETEMI.jpg', '2018-03-04 11:12:06', '2018-03-04 11:12:06');
+(6, 9, 'k2FKRQcgdWW6fwv14BUMX9mwLvXnsGqOynlETEMI.jpg', '2018-03-04 11:12:06', '2018-03-04 11:12:06'),
+(7, 10, 'WcAbt1kh7zcmg4WuXLH6emi95kFTuZJzwbayclUY.jpg', '2018-03-23 15:20:34', '2018-03-23 15:20:34'),
+(8, 10, 'Cq8SAWtfeQbVghbp7IEBEdvLy3JKcPVYcdTksUvS.jpg', '2018-03-23 15:20:34', '2018-03-23 15:20:34');
 
 -- --------------------------------------------------------
 
@@ -570,7 +676,7 @@ INSERT INTO `lounge_poll_option_user` (`id`, `lounge_poll_option_id`, `user_id`,
 (1, 1, 1, NULL, NULL),
 (2, 1, 2, NULL, NULL),
 (3, 2, 2, NULL, NULL),
-(12, 4, 2, NULL, NULL);
+(15, 4, 2, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -606,9 +712,6 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (138, '2017_10_25_165345_create_data_links_table', 1),
 (139, '2017_10_25_165438_create_data_images_table', 1),
 (140, '2017_10_25_165504_create_data_voices_table', 1),
-(141, '2017_10_25_165506_create_data_image_contents_table', 1),
-(142, '2017_10_25_165507_create_data_voice_contents_table', 1),
-(143, '2017_10_25_165651_create_data_user_table', 1),
 (144, '2017_10_25_165652_create_data_comments_table', 1),
 (145, '2017_10_25_165653_create_data_likes_table', 1),
 (146, '2017_10_25_170000_create_assignments_table', 1),
@@ -624,7 +727,11 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (156, '2017_10_25_199845_create_question_user_table', 1),
 (159, '2017_10_25_135542_create_faculties_table', 2),
 (160, '2017_10_25_135542_create_universities_table', 2),
-(161, '2017_10_25_135543_create_group_additional_infos_table', 2);
+(161, '2017_10_25_135543_create_group_additional_infos_table', 2),
+(162, '2017_10_25_165504_create_data_files_table', 3),
+(163, '2017_10_25_165651_create_data_user_table', 4),
+(164, '2017_10_25_165506_create_data_image_contents_table', 5),
+(165, '2017_10_25_165507_create_data_voice_contents_table', 5);
 
 -- --------------------------------------------------------
 
@@ -747,8 +854,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `reset_password_token`, `password`, `api_token`, `birth_date`, `gender`, `avatar`, `bio`, `user_role_id`, `created_at`, `updated_at`) VALUES
-(1, 'eslam', 'jeksogsaa@gmail.com', 'mU4FI83VNKruxmgy1eXq1MHmE4wPwznmITBS5OsIRfUVgzQXBy5Q5i87bI4p', '$2y$10$kUnFXzKO8p2Hy7/oGcI8CuAkRYiqzL1bo6ZCa0/tohWj/H8zabK4u', 'c13F32ZdbFy4m7Ru5xciyzvtfcuAxZxpGac1Wum1YSczAbxj0Qr65H96F3Ht', '1993-07-30', 'm', 'yFAiEgmpgrrrmBuRg0FNrvb3YtAQNNXeLtkMQsfj.jpg', 'test test!', 2, '2017-11-19 11:45:31', '2018-02-28 15:44:56'),
-(2, 'jekso', 'jeksogsa@gmail.com', '0IVTp3OkPwxUmiXQfSxST2sAxgkHYWDw0uKupCJhblkgzUu5HgtkfnuS3dwJ', '$2y$10$TghQ9.ZCfxEKqQlOMKnT7u57l3rulhhhzDhwYvwrJRZcY4zh8tbDy', 's9WyEHb3IdanUDebrvSJywvObQUL7U5cBKQnnSx0FnQHvjnolc8j27HzB1uE', '1993-07-30', 'm', 'ynamRqNeUbncPNwXup67gkyEfdRKvK0oOnCrd9ui.jpg', 'test test!', 2, '2017-11-19 12:04:53', '2017-11-27 12:23:45');
+(1, 'eslam', 'jeksogsaa@gmail.com', 'mU4FI83VNKruxmgy1eXq1MHmE4wPwznmITBS5OsIRfUVgzQXBy5Q5i87bI4p', '$2y$10$kUnFXzKO8p2Hy7/oGcI8CuAkRYiqzL1bo6ZCa0/tohWj/H8zabK4u', 'TgLT4o6Lsp4FUFzbyEwACZWvWMllecMTfQTlhHMeCr5wjkqElE9lSKblE7wQ', '1993-07-30', 'm', 'yFAiEgmpgrrrmBuRg0FNrvb3YtAQNNXeLtkMQsfj.jpg', 'test test!', 2, '2017-11-19 11:45:31', '2018-03-05 20:15:18'),
+(2, 'jekso', 'jeksogsa@gmail.com', '0IVTp3OkPwxUmiXQfSxST2sAxgkHYWDw0uKupCJhblkgzUu5HgtkfnuS3dwJ', '$2y$10$TghQ9.ZCfxEKqQlOMKnT7u57l3rulhhhzDhwYvwrJRZcY4zh8tbDy', 'ijPcf0DqDUzpNohCUnv33ATqx82tcHK3h61wNVzmzPPqFuSHwX9pLIIfamy0', '1993-07-30', 'm', 'ynamRqNeUbncPNwXup67gkyEfdRKvK0oOnCrd9ui.jpg', 'test test!', 2, '2017-11-19 12:04:53', '2018-03-05 20:16:18');
 
 -- --------------------------------------------------------
 
@@ -837,6 +944,13 @@ ALTER TABLE `data_comments`
   ADD KEY `data_comments_user_id_foreign` (`user_id`);
 
 --
+-- Indexes for table `data_files`
+--
+ALTER TABLE `data_files`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `data_files_data_id_foreign` (`data_id`);
+
+--
 -- Indexes for table `data_images`
 --
 ALTER TABLE `data_images`
@@ -849,7 +963,8 @@ ALTER TABLE `data_images`
 ALTER TABLE `data_image_contents`
   ADD PRIMARY KEY (`id`),
   ADD KEY `data_image_contents_keyword_index` (`keyword`),
-  ADD KEY `data_image_contents_data_image_id_foreign` (`data_image_id`);
+  ADD KEY `data_image_contents_data_image_id_foreign` (`data_image_id`),
+  ADD KEY `data_image_contents_group_id_foreign` (`group_id`);
 
 --
 -- Indexes for table `data_likes`
@@ -872,7 +987,8 @@ ALTER TABLE `data_links`
 ALTER TABLE `data_user`
   ADD PRIMARY KEY (`id`),
   ADD KEY `data_user_data_id_foreign` (`data_id`),
-  ADD KEY `data_user_user_id_foreign` (`user_id`);
+  ADD KEY `data_user_user_id_foreign` (`user_id`),
+  ADD KEY `data_user_group_id_foreign` (`group_id`);
 
 --
 -- Indexes for table `data_voices`
@@ -887,7 +1003,8 @@ ALTER TABLE `data_voices`
 ALTER TABLE `data_voice_contents`
   ADD PRIMARY KEY (`id`),
   ADD KEY `data_voice_contents_keyword_index` (`keyword`),
-  ADD KEY `data_voice_contents_data_voice_id_foreign` (`data_voice_id`);
+  ADD KEY `data_voice_contents_data_voice_id_foreign` (`data_voice_id`),
+  ADD KEY `data_voice_contents_group_id_foreign` (`group_id`);
 
 --
 -- Indexes for table `faculties`
@@ -1090,47 +1207,52 @@ ALTER TABLE `assignment_likes`
 -- AUTO_INCREMENT for table `datas`
 --
 ALTER TABLE `datas`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `data_comments`
 --
 ALTER TABLE `data_comments`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `data_files`
+--
+ALTER TABLE `data_files`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `data_images`
 --
 ALTER TABLE `data_images`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `data_image_contents`
 --
 ALTER TABLE `data_image_contents`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `data_likes`
 --
 ALTER TABLE `data_likes`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `data_links`
 --
 ALTER TABLE `data_links`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `data_user`
 --
 ALTER TABLE `data_user`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `data_voices`
 --
 ALTER TABLE `data_voices`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `data_voice_contents`
 --
 ALTER TABLE `data_voice_contents`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `faculties`
 --
@@ -1170,17 +1292,17 @@ ALTER TABLE `interest_tag_user`
 -- AUTO_INCREMENT for table `lounges`
 --
 ALTER TABLE `lounges`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `lounge_comments`
 --
 ALTER TABLE `lounge_comments`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `lounge_images`
 --
 ALTER TABLE `lounge_images`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `lounge_likes`
 --
@@ -1195,12 +1317,12 @@ ALTER TABLE `lounge_poll_options`
 -- AUTO_INCREMENT for table `lounge_poll_option_user`
 --
 ALTER TABLE `lounge_poll_option_user`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=162;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=166;
 --
 -- AUTO_INCREMENT for table `questions`
 --
@@ -1294,6 +1416,12 @@ ALTER TABLE `data_comments`
   ADD CONSTRAINT `data_comments_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
+-- Constraints for table `data_files`
+--
+ALTER TABLE `data_files`
+  ADD CONSTRAINT `data_files_data_id_foreign` FOREIGN KEY (`data_id`) REFERENCES `datas` (`id`) ON DELETE CASCADE;
+
+--
 -- Constraints for table `data_images`
 --
 ALTER TABLE `data_images`
@@ -1303,7 +1431,8 @@ ALTER TABLE `data_images`
 -- Constraints for table `data_image_contents`
 --
 ALTER TABLE `data_image_contents`
-  ADD CONSTRAINT `data_image_contents_data_image_id_foreign` FOREIGN KEY (`data_image_id`) REFERENCES `data_images` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `data_image_contents_data_image_id_foreign` FOREIGN KEY (`data_image_id`) REFERENCES `data_images` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `data_image_contents_group_id_foreign` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `data_likes`
@@ -1323,6 +1452,7 @@ ALTER TABLE `data_links`
 --
 ALTER TABLE `data_user`
   ADD CONSTRAINT `data_user_data_id_foreign` FOREIGN KEY (`data_id`) REFERENCES `datas` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `data_user_group_id_foreign` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `data_user_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
@@ -1335,7 +1465,8 @@ ALTER TABLE `data_voices`
 -- Constraints for table `data_voice_contents`
 --
 ALTER TABLE `data_voice_contents`
-  ADD CONSTRAINT `data_voice_contents_data_voice_id_foreign` FOREIGN KEY (`data_voice_id`) REFERENCES `data_voices` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `data_voice_contents_data_voice_id_foreign` FOREIGN KEY (`data_voice_id`) REFERENCES `data_voices` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `data_voice_contents_group_id_foreign` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `group_additional_infos`

@@ -15,6 +15,7 @@ class CreateDataImageContentsTable extends Migration
     {
         Schema::create('data_image_contents', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('group_id')->unsigned();
             $table->integer('data_image_id')->unsigned();
             $table->string('keyword')->index();
             $table->integer('vertices_1_x');
@@ -30,6 +31,7 @@ class CreateDataImageContentsTable extends Migration
 
         Schema::table('data_image_contents', function (Blueprint $table){
             $table->foreign('data_image_id')->references('id')->on('data_images')->onDelete('cascade');
+            $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
         });
     }
 

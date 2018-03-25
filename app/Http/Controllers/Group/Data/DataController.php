@@ -88,7 +88,7 @@ class DataController extends Controller
 
 
         // save Data files if found
-        if($request->type == Data::DATA_WITH_FILE && !empty($request->files))
+        if($request->type == Data::DATA_WITH_FILE && !empty($request->data_files))
             $data->save_data_files($request->data_files);
 
 

@@ -16,6 +16,7 @@ class CreateDataVoiceContentsTable extends Migration
         Schema::create('data_voice_contents', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('data_voice_id')->unsigned();
+            $table->integer('group_id')->unsigned();
             $table->string('keyword')->index();
             $table->string('start_time');
             $table->string('end_time');
@@ -24,6 +25,7 @@ class CreateDataVoiceContentsTable extends Migration
 
         Schema::table('data_voice_contents', function (Blueprint $table){
             $table->foreign('data_voice_id')->references('id')->on('data_voices')->onDelete('cascade');
+            $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
         });
     }
 
