@@ -1,5 +1,6 @@
 # Mov
-Social Educational Platform has alot of features like creating study groups, posting
+This repo is a web service for MOV Application
+MOV is a Social Educational Platform has alot of features like creating study groups, posting
 feeds,adding questions, upload assignments and uploading materials and search for them
 using AI for example searching in images contents and audio notes contents using a string
 query.
